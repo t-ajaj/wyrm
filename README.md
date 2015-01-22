@@ -11,6 +11,7 @@ Online documentation is available [here][wyrmdoc].
 
 ## Installation
 
+
 ### Using git
 
 Use distutils to install Wyrm into your `PYTHONPATH`:
