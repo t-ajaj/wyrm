@@ -29,7 +29,7 @@ doc:
 
 ghpages: doc
 	rm -rf $(GH_PAGES)
-	git clone git@github.com:venthur/wyrm $(GH_PAGES)
+	git clone git@github.com:bbci/wyrm $(GH_PAGES)
 	cd $(GH_PAGES); git checkout gh-pages
 	rm -rf $(GH_PAGES)/*
 	cp -r $(DOCDIR)/_build/html/* $(GH_PAGES)
