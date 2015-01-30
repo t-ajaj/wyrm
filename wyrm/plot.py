@@ -612,8 +612,8 @@ def set_highlights(highlights, hcolors=None, set_axes=None):
 
         # check if highlights is an instance of the Highlight class
         for p in set_axes:
-            for span in highlights:
-                highlight(span[0], span[1]-1, p, colormask.pop(0), .5)
+            for idx, span in enumerate(highlights):
+                highlight(span[0], span[1], p, colormask[idx], .5)
 
 
 def calc_centered_grid(cols_list, hpad=.05, vpad=.05):
