@@ -87,15 +87,20 @@ def plot_spatio_temporal_r2_values(dat):
 
     """
     r2 = proc.calculate_signed_r_square(dat)
+    r2 *= -1
     max = np.max(np.abs(r2))
     plt.imshow(r2.T, aspect='auto', interpolation='None', vmin=-max, vmax=max, cmap='RdBu')
     ax = plt.gca()
     # TODO: sort front-back, left-right
     # use the locators to fine-tune the ticks
-    #ax.yaxis.set_major_locator(ticker.MaxNLocator())
-    #ax.xaxis.set_major_locator(ticker.MaxNLocator())
+    mask = [True if chan.endswith('z') else False for chan in dat.axes[-1]]
+
+    ax.yaxis.set_major_locator(ticker.FixedLocator(np.nonzero(mask)[0]))
     ax.yaxis.set_major_formatter(ticker.IndexFormatter(dat.axes[-1]))
+
+    ax.xaxis.set_major_locator(ticker.MultipleLocator( np.max(dat.axes[-2]) // 100))
     ax.xaxis.set_major_formatter(ticker.IndexFormatter(['%.1f' % i for i in dat.axes[-2]]))
+
     plt.xlabel('%s [%s]' % (dat.names[-2], dat.units[-2]))
     plt.ylabel('%s [%s]' % (dat.names[-1], dat.units[-1]))
     plt.tight_layout(True)
