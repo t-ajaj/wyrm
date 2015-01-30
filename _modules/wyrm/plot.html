@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>wyrm.plot &mdash; Wyrm 0.8.beta documentation</title>
+    <title>wyrm.plot &mdash; Wyrm 0.9.beta documentation</title>
     
     <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.8.beta',
+        VERSION:     '0.9.beta',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/sidebar.js"></script>
-    <link rel="top" title="Wyrm 0.8.beta documentation" href="../../index.html" />
+    <link rel="top" title="Wyrm 0.9.beta documentation" href="../../index.html" />
     <link rel="up" title="Module code" href="../index.html" /> 
   </head>
   <body>
@@ -40,7 +40,7 @@
         <li class="right" >
           <a href="../../np-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../index.html">Wyrm 0.8.beta documentation</a> &raquo;</li>
+        <li><a href="../../index.html">Wyrm 0.9.beta documentation</a> &raquo;</li>
           <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -425,7 +425,7 @@
     <span class="k">return</span> <span class="n">ax</span><span class="p">,</span> <span class="n">sc</span>
 
 </div>
-<div class="viewcode-block" id="plot_scalp"><a class="viewcode-back" href="../../api/wyrm.html#wyrm.plot.plot_scalp">[docs]</a><span class="k">def</span> <span class="nf">plot_scalp</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+<div class="viewcode-block" id="plot_scalp"><a class="viewcode-back" href="../../api/wyrm.html#wyrm.plot.plot_scalp">[docs]</a><span class="k">def</span> <span class="nf">plot_scalp</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
                <span class="n">annotate</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Plots the values &#39;v&#39; for channels &#39;channels&#39; on a scalp.</span>
 
@@ -492,17 +492,19 @@
         <span class="n">pos_scalp</span> <span class="o">=</span> <span class="n">_transform_rect</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">rect_scalp</span><span class="p">)</span>
         <span class="n">pos_colorbar</span> <span class="o">=</span> <span class="n">_transform_rect</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">rect_colorbar</span><span class="p">)</span>
 
-    <span class="n">vmax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-    <span class="n">vmin</span> <span class="o">=</span> <span class="o">-</span><span class="n">vmax</span>
     <span class="k">if</span> <span class="n">norm</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">vmax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        <span class="n">vmin</span> <span class="o">=</span> <span class="o">-</span><span class="n">vmax</span>
         <span class="n">norm</span> <span class="o">=</span> <span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">ticks</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-        <span class="n">ticks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="n">ticks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">norm</span><span class="o">.</span><span class="n">vmin</span><span class="p">,</span> <span class="n">norm</span><span class="o">.</span><span class="n">vmax</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
     <span class="n">a</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">pos_scalp</span><span class="p">)</span>
-    <span class="n">ax0</span> <span class="o">=</span> <span class="n">ax_scalp</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">annotate</span><span class="o">=</span><span class="n">annotate</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+    <span class="n">ax0</span> <span class="o">=</span> <span class="n">ax_scalp</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">annotate</span><span class="o">=</span><span class="n">annotate</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">norm</span><span class="o">.</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">norm</span><span class="o">.</span><span class="n">vmax</span><span class="p">,</span>
+                   <span class="n">colormap</span><span class="o">=</span><span class="n">colormap</span><span class="p">)</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">pos_colorbar</span><span class="p">)</span>
-    <span class="n">ax1</span> <span class="o">=</span> <span class="n">ax_colorbar</span><span class="p">(</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="n">ticks</span><span class="p">)</span>
+    <span class="n">ax1</span> <span class="o">=</span> <span class="n">ax_colorbar</span><span class="p">(</span><span class="n">norm</span><span class="o">.</span><span class="n">vmin</span><span class="p">,</span> <span class="n">norm</span><span class="o">.</span><span class="n">vmax</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="n">ticks</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="n">colormap</span><span class="p">,</span>
+                      <span class="n">label</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">ax0</span><span class="p">,</span> <span class="n">ax1</span>
 
@@ -870,7 +872,7 @@
 <span class="c"># Primitives</span>
 <span class="c">###############################################################################</span>
 
-<div class="viewcode-block" id="ax_scalp"><a class="viewcode-back" href="../../api/wyrm.html#wyrm.plot.ax_scalp">[docs]</a><span class="k">def</span> <span class="nf">ax_scalp</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">annotate</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="ax_scalp"><a class="viewcode-back" href="../../api/wyrm.html#wyrm.plot.ax_scalp">[docs]</a><span class="k">def</span> <span class="nf">ax_scalp</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">annotate</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Draw a scalp plot.</span>
 
 <span class="sd">    Draws a scalp plot on an existing axes. The method takes an array of</span>
@@ -897,6 +899,8 @@
 <span class="sd">        to -1 and 1, all values smaller than -1 and bigger than 1 will</span>
 <span class="sd">        appear the same as -1 and 1. If not set, the maximum absolute</span>
 <span class="sd">        value in ``v`` is taken to calculate both values.</span>
+<span class="sd">    colormap : matplotlib.colors.colormap, optional</span>
+<span class="sd">        A colormap to define the color transitions.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -923,7 +927,7 @@
     <span class="n">f</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">LinearNDInterpolator</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)),</span> <span class="n">z</span><span class="p">)</span>
     <span class="n">zz</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">)</span>
     <span class="c"># draw the contour map</span>
-    <span class="n">ctr</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">zz</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+    <span class="n">ctr</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">zz</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">colormap</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">zz</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s">&quot;k&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=.</span><span class="mi">1</span><span class="p">)</span>
     <span class="c"># paint the head</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">Circle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s">&#39;solid&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="bp">False</span><span class="p">))</span>
@@ -948,7 +952,7 @@
     <span class="n">plt</span><span class="o">.</span><span class="n">sci</span><span class="p">(</span><span class="n">ctr</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">ax</span>
 </div>
-<div class="viewcode-block" id="ax_colorbar"><a class="viewcode-back" href="../../api/wyrm.html#wyrm.plot.ax_colorbar">[docs]</a><span class="k">def</span> <span class="nf">ax_colorbar</span><span class="p">(</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="ax_colorbar"><a class="viewcode-back" href="../../api/wyrm.html#wyrm.plot.ax_colorbar">[docs]</a><span class="k">def</span> <span class="nf">ax_colorbar</span><span class="p">(</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Draw a color bar</span>
 
 <span class="sd">    Draws a color bar on an existing axes. The range of the colors is</span>
@@ -973,6 +977,8 @@
 <span class="sd">        The label for the colorbar</span>
 <span class="sd">    ticks : list, optional</span>
 <span class="sd">        The tick positions</span>
+<span class="sd">    colormap : matplotlib.colors.colormap, optional</span>
+<span class="sd">        A colormap to define the color transitions.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -981,7 +987,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
         <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-    <span class="n">ColorbarBase</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="n">ticks</span><span class="p">)</span>
+    <span class="n">ColorbarBase</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="n">ticks</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">colormap</span><span class="p">)</span>
 
 <span class="c">###############################################################################</span>
 <span class="c"># Utility Functions</span>
@@ -1158,7 +1164,7 @@
         <li class="right" >
           <a href="../../np-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../index.html">Wyrm 0.8.beta documentation</a> &raquo;</li>
+        <li><a href="../../index.html">Wyrm 0.9.beta documentation</a> &raquo;</li>
           <li><a href="../index.html" >Module code</a> &raquo;</li> 
       </ul>
     </div>
