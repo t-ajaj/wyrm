@@ -294,7 +294,7 @@ def convert_mushu_data(data, markers, fs, channels):
 
     References
     ----------
-    https://github.com/venthur/mushu
+    https://github.com/bbci/mushu
 
     """
     time_axis = np.linspace(0, 1000 * data.shape[0] / fs, data.shape[0], endpoint=False)
