@@ -313,7 +313,7 @@ def plot_tenten(data, highlights=None, hcolors=None, legend=False, scale=True,
 
     # distribute the channels to the lists by their y-position
     count = 0
-    for c in dcopy.axes[1]:
+    for c in dcopy.axes[-1]:
         if c in system:
             # entries in channel_lists: [<channel_name>, <x-position>, <position in Data>]
             channel_lists[ordering[system[c][1]]].append((c, system[c][0], count))
