@@ -63,14 +63,14 @@ Wyrm is mainly developed under Python 2.7, however since people will eventually
 move on to Python 3 we try to be forward compatible by writing the code in a way
 that it runs on Python 2 and -3.
 
-[![Build Status](https://travis-ci.org/venthur/wyrm.png)](https://travis-ci.org/venthur/wyrm)
+[![Build Status](https://travis-ci.org/bbci/wyrm.png)](https://travis-ci.org/bbci/wyrm)
 
 Whenever a new version of Wyrm is pushed to github, the [Travis continuous
 integration service][travisci] will run Wyrm's whole test suite with Python 2.7,
 3.3, and 3.4. If and only if all three test suites pass, the build is shown as
 "passing".
 
-  [travisci]: https://travis-ci.org/venthur/wyrm
+  [travisci]: https://travis-ci.org/bbci/wyrm
 
 
 ## Related Software
