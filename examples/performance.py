@@ -60,7 +60,7 @@ def online_erp(fs, n_channels, subsample):
     t_last_marker = time.time()
 
     full_iterations = 0
-    while full_iterations < 200:
+    while full_iterations < 500:
 
         t0 = time.time()
 
@@ -73,7 +73,7 @@ def online_erp(fs, n_channels, subsample):
         # get data
         data = np.random.random((samples, n_channels))
         ax_times = np.linspace(0, samples / fs, samples, endpoint=False)
-        if t_last_marker + .1 < time.time():
+        if t_last_marker + .01 < time.time():
             t_last_marker = time.time()
             markers = [[ax_times[-1], 'm']]
         else:
