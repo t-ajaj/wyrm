@@ -59,6 +59,9 @@ def online_erp(fs, n_channels, subsample):
     # time since the last marker
     t_last_marker = time.time()
 
+    # time since the experiment started
+    t_start = time.time()
+
     full_iterations = 0
     while full_iterations < 500:
 
@@ -72,15 +75,14 @@ def online_erp(fs, n_channels, subsample):
 
         # get data
         data = np.random.random((samples, n_channels))
-        ax_times = np.linspace(0, samples / fs, samples, endpoint=False)
+        ax_times = np.linspace(0, 1000 * (samples / fs), samples, endpoint=False)
         if t_last_marker + .01 < time.time():
             t_last_marker = time.time()
             markers = [[ax_times[-1], 'm']]
         else:
             markers = []
 
-
-        cnt = Data(data, axes=[ax_times, ax_channels], names=names, units=units )
+        cnt = Data(data, axes=[ax_times, ax_channels], names=names, units=units)
         cnt.fs = fs
         cnt.markers = markers
 
@@ -114,6 +116,11 @@ def online_erp(fs, n_channels, subsample):
 
         # classification
         proc.lda_apply(fv, cfy)
+
+        # don't measure in the first second, where the ringbuffer is not
+        # full yet.
+        if time.time() - t_start < 1:
+            continue
 
         dt = time.time() - t0
         times.append(dt)
