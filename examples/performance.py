@@ -144,8 +144,10 @@ def plot():
     with open('results.pickle', 'rb') as fh:
         results = pickle.load(fh)
 
+    ranges = []
     x, y = [], []
     for s, t in results:
+        ranges.append(t.max() - t.min())
         y.append(t)
         x.append(s[12:])
     x = [50, 100, 500] * 6
@@ -167,12 +169,16 @@ def plot():
     plt.grid(which='minor', axis='y', ls='-.', color=LGRAY)
     for i in range(5):
         plt.vlines((i+1)*3+.5, 0, 300, color=BLACK)
-    plt.vlines(9.5, 0, 1000, color=RED, lw=3)
-    plt.text(3, 500, 'with subsampling', color=RED)
-    plt.text(12, 500, 'without subsampling', color=RED)
+    plt.vlines(9.5, 0, 1000, color=BLACK, lw=3)
+    plt.text(5, 600, 'with subsampling', color=BLACK, weight='bold', horizontalalignment='center')
+    plt.text(14, 600, 'without subsampling', color=BLACK, weight='bold', horizontalalignment='center')
     for i, t in enumerate(['100Hz', '1kHz', '10kHz']):
-        plt.text(i*3+1, 200, t, color=BLACK)
-        plt.text(i*3+10, 200, t, color=BLACK)
+        plt.text(i*3+2, 200, t, color=BLACK, horizontalalignment='center')
+        plt.text(i*3+11, 200, t, color=BLACK, horizontalalignment='center')
+    for i, r in enumerate(ranges):
+        plt.text(i+1, 1.5, "{range:.1f}".format(range=r),
+                 horizontalalignment='center', size='x-small', color=BLUE, weight='semibold')
+
     plt.tight_layout()
     plt.show()
 
