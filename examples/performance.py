@@ -195,8 +195,9 @@ def measure():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Measure online performance.")
-    parser.add_argument('--measure', action='store_true')
-    parser.add_argument('--plot', action='store_true')
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument('--measure', action='store_true')
+    group.add_argument('--plot', action='store_true')
 
     args = parser.parse_args()
     if args.measure:
