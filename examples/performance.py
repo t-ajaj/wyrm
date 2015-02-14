@@ -31,14 +31,15 @@ def online_erp(fs, n_channels, subsample):
 
 
     MRK_DEF = {'target': 'm'}
-    SEG_IVAL = [-50, 500]
-    JUMPING_MEANS_IVALS = [[0, 50], [50, 100], [100, 150], [150, 200], [200, 250], [250, 300]]
+    SEG_IVAL = [0, 700]
+    JUMPING_MEANS_IVALS = [150, 220], [200, 260], [310, 360], [550, 660]
+    RING_BUFFER_CAP = 1000
 
     cfy = [0, 0]
 
     fs_n = fs / 2
 
-    b_l, a_l = proc.signal.butter(5, [45 / fs_n], btype='low')
+    b_l, a_l = proc.signal.butter(5, [30 / fs_n], btype='low')
     b_h, a_h = proc.signal.butter(5, [.4 / fs_n], btype='high')
     zi_l = proc.lfilter_zi(b_l, a_l, n_channels)
     zi_h = proc.lfilter_zi(b_h, a_h, n_channels)
@@ -49,7 +50,7 @@ def online_erp(fs, n_channels, subsample):
     units = ['ms', '#']
 
     blockbuf = BlockBuffer(blocksize)
-    ringbuf = RingBuffer(1000)
+    ringbuf = RingBuffer(RING_BUFFER_CAP)
 
     times = []
 
@@ -119,7 +120,7 @@ def online_erp(fs, n_channels, subsample):
 
         # don't measure in the first second, where the ringbuffer is not
         # full yet.
-        if time.time() - t_start < 1:
+        if time.time() - t_start < (RING_BUFFER_CAP / 1000):
             continue
 
         dt = time.time() - t0
