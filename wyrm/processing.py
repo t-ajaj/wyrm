@@ -532,8 +532,6 @@ def segment_dat(dat, marker_def, ival, newsamples=None, timeaxis=-2):
         the new samples. To make sure each epoch appears only once
         within all iterations, ``segment_dat`` needs to know the number
         of new samples.
-
-
     timeaxis : int, optional
         the axis along which the segmentation will take place
 
@@ -545,6 +543,7 @@ def segment_dat(dat, marker_def, ival, newsamples=None, timeaxis=-2):
     Raises
     ------
     AssertionError
+
         * if ``dat`` has not ``.fs`` or ``.markers`` attribute or if
           ``ival[0] > ival[1]``.
         * if ``newsamples`` is not ``None`` or positive
@@ -689,15 +688,18 @@ def append(dat, dat2, axis=0, extra=None):
     ------
     AssertionError
         if one of the following is true:
+
             * the dimensions of ``.data`` do not match
             * ``names`` are not equal
             * ``units`` are not equal
             * ``data.shape[i]`` are not equal for all i except ``i == axis``
             * ``axes[i]`` are not equal for all i except ``i == axis``
     TypeError
-        * if one of the attributes in ``extra`` does not have the same
-          type in ``dat`` and ``dat2``
-        * if one of the attributes in ``extra`` has an unsupported type
+        if one of the following is true:
+
+            * if one of the attributes in ``extra`` does not have the same
+              type in ``dat`` and ``dat2``
+            * if one of the attributes in ``extra`` has an unsupported type
 
     Examples
     --------
@@ -1560,6 +1562,7 @@ def calculate_csp(epo, classes=None):
     ------
     AssertionError :
         If:
+
           * ``classes`` is not ``None`` and has less than two elements
           * ``classes`` is not ``None`` and the first two elements are
             not found in the ``epo``
@@ -1691,7 +1694,7 @@ def calculate_spoc(epo):
         The spatial activation patterns that correspond to the filters
         in ``v``. Each column is a spatial pattern. when visualizing the
         SPoC components as scalp maps, plot the spatial patterns and not
-        the filters. See also [2]_.
+        the filters. See also [haufe2014]_.
     d : 1d array
         The lambda values that correspond to the filters/patterns in
         ``v`` and ``a``, sorted from largest (positive covariance) to
@@ -1730,28 +1733,28 @@ def calculate_spoc(epo):
     specific frequency band is investigated, the input signals must be
     band-passed filtered before they are segmented into epochs and given
     to this function. This method implements ``SPoC_lambda``, presented
-    in [1]_. Thus, source activity is extracted from the input data via
-    spatial filtering. The spatial filters are optimized such that the
-    epoch-wise variance maximally covaries with the given target signal
-    ``z``.
+    in [daehne2014]_. Thus, source activity is extracted from the input
+    data via spatial filtering. The spatial filters are optimized such
+    that the epoch-wise variance maximally covaries with the given
+    target signal ``z``.
 
     See Also
     --------
     :func:`calculate_csp`
 
-
     References
     ----------
 
-    .. [1] S. Dähne, F. C. Meinecke, S. Haufe, J. Höhne, M. Tangermann,
-        K. R. Müller, V. V. Nikulin "SPoC: a novel framework for
-        relating the amplitude of neuronal oscillations to behaviorally
-        relevant parameters", NeuroImage, 86(0):111-122, 2014
+    .. [daehne2014] S. Dähne, F. C. Meinecke, S. Haufe, J. Höhne, M.
+       Tangermann, K. R. Müller, V. V. Nikulin "SPoC: a novel framework
+       for relating the amplitude of neuronal oscillations to
+       behaviorally relevant parameters", NeuroImage, 86(0):111-122,
+       2014
 
-    .. [2] S. Haufe, F. Meinecke, K. Görgen, S. Dähne, J. Haynes, B.
-        Blankertz, F. Biessmann, "On the interpretation of weight
-        vectors of linear models in multivariate neuroimaging",
-        NeuroImage, 87:96-110, 2014
+    .. [haufe2014] S. Haufe, F. Meinecke, K. Görgen, S. Dähne, J.
+       Haynes, B. Blankertz, F. Biessmann, "On the interpretation of
+       weight vectors of linear models in multivariate neuroimaging",
+       NeuroImage, 87:96-110, 2014
 
     """
     z = epo.axes[0][:]
@@ -1866,9 +1869,10 @@ def calculate_cca(dat_x, dat_y, timeaxis=-2):
     ------
     AssertionError :
         If:
-          * ``dat_x`` and ``dat_y`` is not continuous Data object
-          * the length of ``dat_x`` and ``dat_y`` is different on the
-            ``timeaxis``
+
+            * ``dat_x`` and ``dat_y`` is not continuous Data object
+            * the length of ``dat_x`` and ``dat_y`` is different on the
+              ``timeaxis``
 
     Examples
     --------
