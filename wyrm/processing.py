@@ -2008,6 +2008,54 @@ def rectify_channels(dat):
     return dat.copy(data=np.abs(dat.data))
 
 
+def rereference(dat, chan, chanaxis=-1):
+    """Rereference all channels against a single channel
+
+    This method rereferences all channels against a single channel by
+    subtracting the sample values of a reference channel. The channel
+    that is used as reference will consequently have all values set to
+    zero.
+
+    Parameters
+    ----------
+    dat : Data
+        continuous or epoched Data
+    chan : str
+        the name of the channel to use as reference. The name is case
+        insensitive
+    chanaxis : int, optional
+        the axis that contains the channels
+
+    Returns
+    -------
+    dat : Dat
+        a copy of ``dat`` with the channels rereferenced
+
+    Examples
+    --------
+
+    Rereference the data against ``chan0``
+
+    >>> dat = rereference(dat, 'chan0')
+
+    Raises
+    ------
+    ValueError : if ``chan`` is not in ``dat``
+
+    """
+    channels = [c.lower() for c in  dat.axes[chanaxis]]
+    # might throw a ValueError, which is ok
+    idx = channels.index(chan.lower())
+    dat = dat.copy()
+    mask = [slice(None) for i in range(dat.data.ndim)]
+    # putting the index in brackets (i.e. [3]) prevents the indexed
+    # array from beeing squeezed and it keeps its original dimensions!
+    # TODO: check the other methods if we could use this neat trick!
+    mask[chanaxis] = [idx]
+    dat.data -= dat.data[mask]
+    return dat
+
+
 def jumping_means(dat, ivals, timeaxis=-2):
     """Calculate the jumping means.
 
