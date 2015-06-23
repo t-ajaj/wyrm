@@ -9,10 +9,11 @@ Welcome to Wyrm's documentation!
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    conventions
    writing_toolbox_methods
+   changelog
 
 API Documentation
 =================
