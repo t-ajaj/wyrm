@@ -1033,6 +1033,39 @@ def lfilter_zi(b, a, n=1):
     return zi
 
 
+def calculate_whitening_matrix(dat):
+    """Calculate whitening matrix from continuous data.
+
+    When applying the whitening matrix to continuous data, the
+    covariance matrix of the whitened data should have all 1s on the
+    diagonal and 0s on the resst.
+
+    Parameters
+    ----------
+    cnt : Data
+        continuous Data object
+
+    Returns
+    -------
+    A : 2d array
+        the shape of the array is ``(channel, channel)``
+
+    Examples
+    --------
+
+    >>> a = calculate_whitening_matrix(cnt_train)
+    >>> cnt_test = np.dot(cnt_test.data, a)
+
+    """
+    # TODO: iprove docstring and example, maybe it's time to implement
+    # an `apply_spatial_filter` method
+    c = np.cov(dat.data.T)
+    d, v = np.linalg.eig(c)
+    tmp = np.dot(v, np.diag(1 / np.sqrt(d)))
+    a = np.dot(tmp, v)
+    return a
+
+
 def clear_markers(dat, timeaxis=-2):
     """Remove markers that are outside of the ``dat`` time interval.
 
