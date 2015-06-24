@@ -45,6 +45,8 @@ numpydoc_show_class_members = False
 # napoleon settings
 napoleon_google_docstring = False
 napoleon_numpy_docstring = True
+napoleon_use_param = False
+napoleon_use_rtype = False
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
