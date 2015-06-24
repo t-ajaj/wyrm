@@ -1038,7 +1038,7 @@ def calculate_whitening_matrix(dat):
 
     When applying the whitening matrix to continuous data, the
     covariance matrix of the whitened data should have all 1s on the
-    diagonal and 0s on the resst.
+    diagonal and 0s on the rest.
 
     Parameters
     ----------
