@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>wyrm.processing &mdash; Wyrm 0.9.beta documentation</title>
+    <title>wyrm.processing &mdash; Wyrm 1.0 documentation</title>
     
-    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.9.beta',
+        VERSION:     '1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,11 +24,11 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/sidebar.js"></script>
-    <link rel="top" title="Wyrm 0.9.beta documentation" href="../../index.html" />
+    <link rel="top" title="Wyrm 1.0 documentation" href="../../index.html" />
     <link rel="up" title="Module code" href="../index.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -37,18 +37,15 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="../../np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li><a href="../../index.html">Wyrm 0.9.beta documentation</a> &raquo;</li>
-          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../../index.html">Wyrm 1.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <h1>Source code for wyrm.processing</h1><div class="highlight"><pre>
 <span class="c">#!/usr/bin/env python</span>
@@ -585,8 +582,6 @@
 <span class="sd">        the new samples. To make sure each epoch appears only once</span>
 <span class="sd">        within all iterations, ``segment_dat`` needs to know the number</span>
 <span class="sd">        of new samples.</span>
-
-
 <span class="sd">    timeaxis : int, optional</span>
 <span class="sd">        the axis along which the segmentation will take place</span>
 
@@ -598,6 +593,7 @@
 <span class="sd">    Raises</span>
 <span class="sd">    ------</span>
 <span class="sd">    AssertionError</span>
+
 <span class="sd">        * if ``dat`` has not ``.fs`` or ``.markers`` attribute or if</span>
 <span class="sd">          ``ival[0] &gt; ival[1]``.</span>
 <span class="sd">        * if ``newsamples`` is not ``None`` or positive</span>
@@ -742,15 +738,18 @@
 <span class="sd">    ------</span>
 <span class="sd">    AssertionError</span>
 <span class="sd">        if one of the following is true:</span>
+
 <span class="sd">            * the dimensions of ``.data`` do not match</span>
 <span class="sd">            * ``names`` are not equal</span>
 <span class="sd">            * ``units`` are not equal</span>
 <span class="sd">            * ``data.shape[i]`` are not equal for all i except ``i == axis``</span>
 <span class="sd">            * ``axes[i]`` are not equal for all i except ``i == axis``</span>
 <span class="sd">    TypeError</span>
-<span class="sd">        * if one of the attributes in ``extra`` does not have the same</span>
-<span class="sd">          type in ``dat`` and ``dat2``</span>
-<span class="sd">        * if one of the attributes in ``extra`` has an unsupported type</span>
+<span class="sd">        if one of the following is true:</span>
+
+<span class="sd">            * if one of the attributes in ``extra`` does not have the same</span>
+<span class="sd">              type in ``dat`` and ``dat2``</span>
+<span class="sd">            * if one of the attributes in ``extra`` has an unsupported type</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -1613,6 +1612,7 @@
 <span class="sd">    ------</span>
 <span class="sd">    AssertionError :</span>
 <span class="sd">        If:</span>
+
 <span class="sd">          * ``classes`` is not ``None`` and has less than two elements</span>
 <span class="sd">          * ``classes`` is not ``None`` and the first two elements are</span>
 <span class="sd">            not found in the ``epo``</span>
@@ -1744,7 +1744,7 @@
 <span class="sd">        The spatial activation patterns that correspond to the filters</span>
 <span class="sd">        in ``v``. Each column is a spatial pattern. when visualizing the</span>
 <span class="sd">        SPoC components as scalp maps, plot the spatial patterns and not</span>
-<span class="sd">        the filters. See also [2]_.</span>
+<span class="sd">        the filters. See also [haufe2014]_.</span>
 <span class="sd">    d : 1d array</span>
 <span class="sd">        The lambda values that correspond to the filters/patterns in</span>
 <span class="sd">        ``v`` and ``a``, sorted from largest (positive covariance) to</span>
@@ -1783,28 +1783,28 @@
 <span class="sd">    specific frequency band is investigated, the input signals must be</span>
 <span class="sd">    band-passed filtered before they are segmented into epochs and given</span>
 <span class="sd">    to this function. This method implements ``SPoC_lambda``, presented</span>
-<span class="sd">    in [1]_. Thus, source activity is extracted from the input data via</span>
-<span class="sd">    spatial filtering. The spatial filters are optimized such that the</span>
-<span class="sd">    epoch-wise variance maximally covaries with the given target signal</span>
-<span class="sd">    ``z``.</span>
+<span class="sd">    in [daehne2014]_. Thus, source activity is extracted from the input</span>
+<span class="sd">    data via spatial filtering. The spatial filters are optimized such</span>
+<span class="sd">    that the epoch-wise variance maximally covaries with the given</span>
+<span class="sd">    target signal ``z``.</span>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
 <span class="sd">    :func:`calculate_csp`</span>
 
-
 <span class="sd">    References</span>
 <span class="sd">    ----------</span>
 
-<span class="sd">    .. [1] S. Dähne, F. C. Meinecke, S. Haufe, J. Höhne, M. Tangermann,</span>
-<span class="sd">        K. R. Müller, V. V. Nikulin &quot;SPoC: a novel framework for</span>
-<span class="sd">        relating the amplitude of neuronal oscillations to behaviorally</span>
-<span class="sd">        relevant parameters&quot;, NeuroImage, 86(0):111-122, 2014</span>
+<span class="sd">    .. [daehne2014] S. Dähne, F. C. Meinecke, S. Haufe, J. Höhne, M.</span>
+<span class="sd">       Tangermann, K. R. Müller, V. V. Nikulin &quot;SPoC: a novel framework</span>
+<span class="sd">       for relating the amplitude of neuronal oscillations to</span>
+<span class="sd">       behaviorally relevant parameters&quot;, NeuroImage, 86(0):111-122,</span>
+<span class="sd">       2014</span>
 
-<span class="sd">    .. [2] S. Haufe, F. Meinecke, K. Görgen, S. Dähne, J. Haynes, B.</span>
-<span class="sd">        Blankertz, F. Biessmann, &quot;On the interpretation of weight</span>
-<span class="sd">        vectors of linear models in multivariate neuroimaging&quot;,</span>
-<span class="sd">        NeuroImage, 87:96-110, 2014</span>
+<span class="sd">    .. [haufe2014] S. Haufe, F. Meinecke, K. Görgen, S. Dähne, J.</span>
+<span class="sd">       Haynes, B. Blankertz, F. Biessmann, &quot;On the interpretation of</span>
+<span class="sd">       weight vectors of linear models in multivariate neuroimaging&quot;,</span>
+<span class="sd">       NeuroImage, 87:96-110, 2014</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">epo</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">][:]</span>
@@ -1919,9 +1919,10 @@
 <span class="sd">    ------</span>
 <span class="sd">    AssertionError :</span>
 <span class="sd">        If:</span>
-<span class="sd">          * ``dat_x`` and ``dat_y`` is not continuous Data object</span>
-<span class="sd">          * the length of ``dat_x`` and ``dat_y`` is different on the</span>
-<span class="sd">            ``timeaxis``</span>
+
+<span class="sd">            * ``dat_x`` and ``dat_y`` is not continuous Data object</span>
+<span class="sd">            * the length of ``dat_x`` and ``dat_y`` is different on the</span>
+<span class="sd">              ``timeaxis``</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -2059,6 +2060,54 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">dat</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">dat</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
+
+</div>
+<div class="viewcode-block" id="rereference"><a class="viewcode-back" href="../../api/wyrm.html#wyrm.processing.rereference">[docs]</a><span class="k">def</span> <span class="nf">rereference</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">chanaxis</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Rereference all channels against a single channel</span>
+
+<span class="sd">    This method rereferences all channels against a single channel by</span>
+<span class="sd">    subtracting the sample values of a reference channel. The channel</span>
+<span class="sd">    that is used as reference will consequently have all values set to</span>
+<span class="sd">    zero.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    dat : Data</span>
+<span class="sd">        continuous or epoched Data</span>
+<span class="sd">    chan : str</span>
+<span class="sd">        the name of the channel to use as reference. The name is case</span>
+<span class="sd">        insensitive</span>
+<span class="sd">    chanaxis : int, optional</span>
+<span class="sd">        the axis that contains the channels</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dat : Dat</span>
+<span class="sd">        a copy of ``dat`` with the channels rereferenced</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    Rereference the data against ``chan0``</span>
+
+<span class="sd">    &gt;&gt;&gt; dat = rereference(dat, &#39;chan0&#39;)</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError : if ``chan`` is not in ``dat``</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">channels</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span>  <span class="n">dat</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="n">chanaxis</span><span class="p">]]</span>
+    <span class="c"># might throw a ValueError, which is ok</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">channels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">chan</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+    <span class="n">dat</span> <span class="o">=</span> <span class="n">dat</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dat</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">ndim</span><span class="p">)]</span>
+    <span class="c"># putting the index in brackets (i.e. [3]) prevents the indexed</span>
+    <span class="c"># array from beeing squeezed and it keeps its original dimensions!</span>
+    <span class="c"># TODO: check the other methods if we could use this neat trick!</span>
+    <span class="n">mask</span><span class="p">[</span><span class="n">chanaxis</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="n">dat</span><span class="o">.</span><span class="n">data</span> <span class="o">-=</span> <span class="n">dat</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">dat</span>
 
 </div>
 <div class="viewcode-block" id="jumping_means"><a class="viewcode-back" href="../../api/wyrm.html#wyrm.processing.jumping_means">[docs]</a><span class="k">def</span> <span class="nf">jumping_means</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span> <span class="n">ivals</span><span class="p">,</span> <span class="n">timeaxis</span><span class="o">=-</span><span class="mi">2</span><span class="p">):</span>
@@ -2278,9 +2327,9 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../search.html" method="get">
       <input type="text" name="q" />
@@ -2297,7 +2346,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -2306,16 +2355,13 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="../../np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li><a href="../../index.html">Wyrm 0.9.beta documentation</a> &raquo;</li>
-          <li><a href="../index.html" >Module code</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../../index.html">Wyrm 1.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2012 - 2014, Bastian Venthur.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2012 - 2015, Bastian Venthur.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

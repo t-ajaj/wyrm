@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>wyrm.plot &mdash; Wyrm 0.9.beta documentation</title>
+    <title>wyrm.plot &mdash; Wyrm 1.0 documentation</title>
     
-    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.9.beta',
+        VERSION:     '1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,12 +24,12 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
-    <link rel="top" title="Wyrm 0.9.beta documentation" href="../index.html" />
+    <link rel="top" title="Wyrm 1.0 documentation" href="../index.html" />
     <link rel="next" title="wyrm.types" href="wyrm.types.html" />
     <link rel="prev" title="wyrm.processing" href="wyrm.processing.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -39,22 +39,19 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
           <a href="wyrm.types.html" title="wyrm.types"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="wyrm.processing.html" title="wyrm.processing"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Wyrm 0.9.beta documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Wyrm 1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-wyrm.plot">
 <span id="wyrm-plot"></span><h1>wyrm.plot<a class="headerlink" href="#module-wyrm.plot" title="Permalink to this headline">¶</a></h1>
@@ -64,10 +61,10 @@ plotting methods: the Primitives and the Composites. The Primitives are
 the most basic and offer simple, single-plot representations. The
 Composites are composed of several primitives and offer more complex
 representations.</p>
-<p>The primitive plots are those whose name begin with <tt class="docutils literal"><span class="pre">ax_</span></tt>, (e.g.
-<tt class="docutils literal"><span class="pre">ax_scalp</span></tt>).</p>
+<p>The primitive plots are those whose name begin with <code class="docutils literal"><span class="pre">ax_</span></code>, (e.g.
+<code class="docutils literal"><span class="pre">ax_scalp</span></code>).</p>
 <p>In order to get more reasonable defaults for colors etc. you can call
-the modules <a class="reference internal" href="wyrm.html#wyrm.plot.beautify" title="wyrm.plot.beautify"><tt class="xref py py-func docutils literal"><span class="pre">beautify()</span></tt></a> method:</p>
+the modules <a class="reference internal" href="wyrm.html#wyrm.plot.beautify" title="wyrm.plot.beautify"><code class="xref py py-func docutils literal"><span class="pre">beautify()</span></code></a> method:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">wyrm</span> <span class="kn">import</span> <span class="n">plot</span>
 <span class="n">plot</span><span class="o">.</span><span class="n">beautify</span><span class="p">()</span>
 </pre></div>
@@ -89,43 +86,43 @@ method here.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.plot.ax_colorbar" title="wyrm.plot.ax_colorbar"><tt class="xref py py-obj docutils literal"><span class="pre">ax_colorbar</span></tt></a>(vmin,&nbsp;vmax[,&nbsp;ax,&nbsp;label,&nbsp;ticks,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.plot.ax_colorbar" title="wyrm.plot.ax_colorbar"><code class="xref py py-obj docutils literal"><span class="pre">ax_colorbar</span></code></a>(vmin,&nbsp;vmax[,&nbsp;ax,&nbsp;label,&nbsp;ticks,&nbsp;...])</td>
 <td>Draw a color bar</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.plot.ax_scalp" title="wyrm.plot.ax_scalp"><tt class="xref py py-obj docutils literal"><span class="pre">ax_scalp</span></tt></a>(v,&nbsp;channels[,&nbsp;ax,&nbsp;annotate,&nbsp;vmin,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.plot.ax_scalp" title="wyrm.plot.ax_scalp"><code class="xref py py-obj docutils literal"><span class="pre">ax_scalp</span></code></a>(v,&nbsp;channels[,&nbsp;ax,&nbsp;annotate,&nbsp;vmin,&nbsp;...])</td>
 <td>Draw a scalp plot.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.plot.beautify" title="wyrm.plot.beautify"><tt class="xref py py-obj docutils literal"><span class="pre">beautify</span></tt></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.plot.beautify" title="wyrm.plot.beautify"><code class="xref py py-obj docutils literal"><span class="pre">beautify</span></code></a>()</td>
 <td>Set reasonable defaults matplotlib.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.plot.calc_centered_grid" title="wyrm.plot.calc_centered_grid"><tt class="xref py py-obj docutils literal"><span class="pre">calc_centered_grid</span></tt></a>(cols_list[,&nbsp;hpad,&nbsp;vpad])</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.plot.calc_centered_grid" title="wyrm.plot.calc_centered_grid"><code class="xref py py-obj docutils literal"><span class="pre">calc_centered_grid</span></code></a>(cols_list[,&nbsp;hpad,&nbsp;vpad])</td>
 <td>Calculates a centered grid of Rectangles and their positions.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.plot.get_channelpos" title="wyrm.plot.get_channelpos"><tt class="xref py py-obj docutils literal"><span class="pre">get_channelpos</span></tt></a>(channame)</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.plot.get_channelpos" title="wyrm.plot.get_channelpos"><code class="xref py py-obj docutils literal"><span class="pre">get_channelpos</span></code></a>(channame)</td>
 <td>Return the x/y position of a channel.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.plot.plot_channels" title="wyrm.plot.plot_channels"><tt class="xref py py-obj docutils literal"><span class="pre">plot_channels</span></tt></a>(dat[,&nbsp;chanaxis,&nbsp;otheraxis])</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.plot.plot_channels" title="wyrm.plot.plot_channels"><code class="xref py py-obj docutils literal"><span class="pre">plot_channels</span></code></a>(dat[,&nbsp;chanaxis,&nbsp;otheraxis])</td>
 <td>Plot all channels for a continuous.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.plot.plot_scalp" title="wyrm.plot.plot_scalp"><tt class="xref py py-obj docutils literal"><span class="pre">plot_scalp</span></tt></a>(v,&nbsp;channels[,&nbsp;levels,&nbsp;colormap,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.plot.plot_scalp" title="wyrm.plot.plot_scalp"><code class="xref py py-obj docutils literal"><span class="pre">plot_scalp</span></code></a>(v,&nbsp;channels[,&nbsp;levels,&nbsp;colormap,&nbsp;...])</td>
 <td>Plots the values &#8216;v&#8217; for channels &#8216;channels&#8217; on a scalp.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.plot.plot_scalp_ti" title="wyrm.plot.plot_scalp_ti"><tt class="xref py py-obj docutils literal"><span class="pre">plot_scalp_ti</span></tt></a>(v,&nbsp;channels,&nbsp;data,&nbsp;interval[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.plot.plot_scalp_ti" title="wyrm.plot.plot_scalp_ti"><code class="xref py py-obj docutils literal"><span class="pre">plot_scalp_ti</span></code></a>(v,&nbsp;channels,&nbsp;data,&nbsp;interval[,&nbsp;...])</td>
 <td>Plots a scalp with channels on top</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.plot.plot_spatio_temporal_r2_values" title="wyrm.plot.plot_spatio_temporal_r2_values"><tt class="xref py py-obj docutils literal"><span class="pre">plot_spatio_temporal_r2_values</span></tt></a>(dat)</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.plot.plot_spatio_temporal_r2_values" title="wyrm.plot.plot_spatio_temporal_r2_values"><code class="xref py py-obj docutils literal"><span class="pre">plot_spatio_temporal_r2_values</span></code></a>(dat)</td>
 <td>Calculate the signed r^2 values and plot them in a heatmap.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.plot.plot_spectrogram" title="wyrm.plot.plot_spectrogram"><tt class="xref py py-obj docutils literal"><span class="pre">plot_spectrogram</span></tt></a>(spectrogram,&nbsp;freqs)</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.plot.plot_spectrogram" title="wyrm.plot.plot_spectrogram"><code class="xref py py-obj docutils literal"><span class="pre">plot_spectrogram</span></code></a>(spectrogram,&nbsp;freqs)</td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.plot.plot_tenten" title="wyrm.plot.plot_tenten"><tt class="xref py py-obj docutils literal"><span class="pre">plot_tenten</span></tt></a>(data[,&nbsp;highlights,&nbsp;hcolors,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.plot.plot_tenten" title="wyrm.plot.plot_tenten"><code class="xref py py-obj docutils literal"><span class="pre">plot_tenten</span></code></a>(data[,&nbsp;highlights,&nbsp;hcolors,&nbsp;...])</td>
 <td>Plots channels on a grid system.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.plot.plot_timeinterval" title="wyrm.plot.plot_timeinterval"><tt class="xref py py-obj docutils literal"><span class="pre">plot_timeinterval</span></tt></a>(data[,&nbsp;r_square,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.plot.plot_timeinterval" title="wyrm.plot.plot_timeinterval"><code class="xref py py-obj docutils literal"><span class="pre">plot_timeinterval</span></code></a>(data[,&nbsp;r_square,&nbsp;...])</td>
 <td>Plots a simple time interval.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.plot.set_highlights" title="wyrm.plot.set_highlights"><tt class="xref py py-obj docutils literal"><span class="pre">set_highlights</span></tt></a>(highlights[,&nbsp;hcolors,&nbsp;set_axes])</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.plot.set_highlights" title="wyrm.plot.set_highlights"><code class="xref py py-obj docutils literal"><span class="pre">set_highlights</span></code></a>(highlights[,&nbsp;hcolors,&nbsp;set_axes])</td>
 <td>Sets highlights in form of vertical boxes to axes.</td>
 </tr>
 </tbody>
@@ -137,18 +134,6 @@ method here.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">ColorbarBase</span></tt>(ax[,&nbsp;cmap,&nbsp;norm,&nbsp;alpha,&nbsp;...])</td>
-<td>Draw a colorbar in an existing axes.</td>
-</tr>
-<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">Data</span></tt>(data,&nbsp;axes,&nbsp;names,&nbsp;units)</td>
-<td>Generic, self-describing data container.</td>
-</tr>
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">Normalize</span></tt>([vmin,&nbsp;vmax,&nbsp;clip])</td>
-<td>A class which, when called, can normalize data into the <tt class="docutils literal"><span class="pre">[0.0,</span> <span class="pre">1.0]</span></tt> interval.</td>
-</tr>
-<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">Rectangle</span></tt>(xy,&nbsp;width,&nbsp;height[,&nbsp;angle])</td>
-<td>Draw a rectangle with lower left at <em>xy</em> = (<em>x</em>, <em>y</em>) with specified <em>width</em> and <em>height</em>.</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -157,7 +142,7 @@ method here.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="wyrm.processing.html"
@@ -165,7 +150,7 @@ method here.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="wyrm.types.html"
                         title="next chapter">wyrm.types</a></p>
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -182,7 +167,7 @@ method here.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -192,20 +177,17 @@ method here.</p>
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
           <a href="wyrm.types.html" title="wyrm.types"
              >next</a> |</li>
         <li class="right" >
           <a href="wyrm.processing.html" title="wyrm.processing"
              >previous</a> |</li>
-        <li><a href="../index.html">Wyrm 0.9.beta documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Wyrm 1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2012 - 2014, Bastian Venthur.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2012 - 2015, Bastian Venthur.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

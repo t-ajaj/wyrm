@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>wyrm.processing &mdash; Wyrm 0.9.beta documentation</title>
+    <title>wyrm.processing &mdash; Wyrm 1.0 documentation</title>
     
-    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.9.beta',
+        VERSION:     '1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,12 +24,12 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
-    <link rel="top" title="Wyrm 0.9.beta documentation" href="../index.html" />
+    <link rel="top" title="Wyrm 1.0 documentation" href="../index.html" />
     <link rel="next" title="wyrm.plot" href="wyrm.plot.html" />
     <link rel="prev" title="wyrm.io" href="wyrm.io.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -39,22 +39,19 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
           <a href="wyrm.plot.html" title="wyrm.plot"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="wyrm.io.html" title="wyrm.io"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Wyrm 0.9.beta documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Wyrm 1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-wyrm.processing">
 <span id="wyrm-processing"></span><h1>wyrm.processing<a class="headerlink" href="#module-wyrm.processing" title="Permalink to this headline">¶</a></h1>
@@ -67,113 +64,116 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.append" title="wyrm.processing.append"><tt class="xref py py-obj docutils literal"><span class="pre">append</span></tt></a>(dat,&nbsp;dat2[,&nbsp;axis,&nbsp;extra])</td>
-<td>Append <tt class="docutils literal"><span class="pre">dat2</span></tt> to <tt class="docutils literal"><span class="pre">dat</span></tt>.</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.append" title="wyrm.processing.append"><code class="xref py py-obj docutils literal"><span class="pre">append</span></code></a>(dat,&nbsp;dat2[,&nbsp;axis,&nbsp;extra])</td>
+<td>Append <code class="docutils literal"><span class="pre">dat2</span></code> to <code class="docutils literal"><span class="pre">dat</span></code>.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.append_cnt" title="wyrm.processing.append_cnt"><tt class="xref py py-obj docutils literal"><span class="pre">append_cnt</span></tt></a>(dat,&nbsp;dat2[,&nbsp;timeaxis,&nbsp;extra])</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.append_cnt" title="wyrm.processing.append_cnt"><code class="xref py py-obj docutils literal"><span class="pre">append_cnt</span></code></a>(dat,&nbsp;dat2[,&nbsp;timeaxis,&nbsp;extra])</td>
 <td>Append two continuous data objects.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.append_epo" title="wyrm.processing.append_epo"><tt class="xref py py-obj docutils literal"><span class="pre">append_epo</span></tt></a>(dat,&nbsp;dat2[,&nbsp;classaxis,&nbsp;extra])</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.append_epo" title="wyrm.processing.append_epo"><code class="xref py py-obj docutils literal"><span class="pre">append_epo</span></code></a>(dat,&nbsp;dat2[,&nbsp;classaxis,&nbsp;extra])</td>
 <td>Append two epoched data objects.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.apply_csp" title="wyrm.processing.apply_csp"><tt class="xref py py-obj docutils literal"><span class="pre">apply_csp</span></tt></a>(epo,&nbsp;filt[,&nbsp;columns])</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.apply_csp" title="wyrm.processing.apply_csp"><code class="xref py py-obj docutils literal"><span class="pre">apply_csp</span></code></a>(epo,&nbsp;filt[,&nbsp;columns])</td>
 <td>Apply the CSP filter.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.calculate_cca" title="wyrm.processing.calculate_cca"><tt class="xref py py-obj docutils literal"><span class="pre">calculate_cca</span></tt></a>(dat_x,&nbsp;dat_y[,&nbsp;timeaxis])</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.calculate_cca" title="wyrm.processing.calculate_cca"><code class="xref py py-obj docutils literal"><span class="pre">calculate_cca</span></code></a>(dat_x,&nbsp;dat_y[,&nbsp;timeaxis])</td>
 <td>Calculate the Canonical Correlation Analysis (CCA).</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.calculate_classwise_average" title="wyrm.processing.calculate_classwise_average"><tt class="xref py py-obj docutils literal"><span class="pre">calculate_classwise_average</span></tt></a>(dat[,&nbsp;classaxis])</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.calculate_classwise_average" title="wyrm.processing.calculate_classwise_average"><code class="xref py py-obj docutils literal"><span class="pre">calculate_classwise_average</span></code></a>(dat[,&nbsp;classaxis])</td>
 <td>Calculate the classwise average.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.calculate_csp" title="wyrm.processing.calculate_csp"><tt class="xref py py-obj docutils literal"><span class="pre">calculate_csp</span></tt></a>(epo[,&nbsp;classes])</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.calculate_csp" title="wyrm.processing.calculate_csp"><code class="xref py py-obj docutils literal"><span class="pre">calculate_csp</span></code></a>(epo[,&nbsp;classes])</td>
 <td>Calculate the Common Spatial Pattern (CSP) for two classes.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.calculate_signed_r_square" title="wyrm.processing.calculate_signed_r_square"><tt class="xref py py-obj docutils literal"><span class="pre">calculate_signed_r_square</span></tt></a>(dat[,&nbsp;classaxis])</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.calculate_signed_r_square" title="wyrm.processing.calculate_signed_r_square"><code class="xref py py-obj docutils literal"><span class="pre">calculate_signed_r_square</span></code></a>(dat[,&nbsp;classaxis])</td>
 <td>Calculate the signed r**2 values.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.calculate_spoc" title="wyrm.processing.calculate_spoc"><tt class="xref py py-obj docutils literal"><span class="pre">calculate_spoc</span></tt></a>(epo)</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.calculate_spoc" title="wyrm.processing.calculate_spoc"><code class="xref py py-obj docutils literal"><span class="pre">calculate_spoc</span></code></a>(epo)</td>
 <td>Compute source power co-modulation analysis (SPoC)</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.clear_markers" title="wyrm.processing.clear_markers"><tt class="xref py py-obj docutils literal"><span class="pre">clear_markers</span></tt></a>(dat[,&nbsp;timeaxis])</td>
-<td>Remove markers that are outside of the <tt class="docutils literal"><span class="pre">dat</span></tt> time interval.</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.clear_markers" title="wyrm.processing.clear_markers"><code class="xref py py-obj docutils literal"><span class="pre">clear_markers</span></code></a>(dat[,&nbsp;timeaxis])</td>
+<td>Remove markers that are outside of the <code class="docutils literal"><span class="pre">dat</span></code> time interval.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.correct_for_baseline" title="wyrm.processing.correct_for_baseline"><tt class="xref py py-obj docutils literal"><span class="pre">correct_for_baseline</span></tt></a>(dat,&nbsp;ival[,&nbsp;timeaxis])</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.correct_for_baseline" title="wyrm.processing.correct_for_baseline"><code class="xref py py-obj docutils literal"><span class="pre">correct_for_baseline</span></code></a>(dat,&nbsp;ival[,&nbsp;timeaxis])</td>
 <td>Subtract the baseline.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.create_feature_vectors" title="wyrm.processing.create_feature_vectors"><tt class="xref py py-obj docutils literal"><span class="pre">create_feature_vectors</span></tt></a>(dat[,&nbsp;classaxis])</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.create_feature_vectors" title="wyrm.processing.create_feature_vectors"><code class="xref py py-obj docutils literal"><span class="pre">create_feature_vectors</span></code></a>(dat[,&nbsp;classaxis])</td>
 <td>Create feature vectors from epoched data.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.filtfilt" title="wyrm.processing.filtfilt"><tt class="xref py py-obj docutils literal"><span class="pre">filtfilt</span></tt></a>(dat,&nbsp;b,&nbsp;a[,&nbsp;timeaxis])</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.filtfilt" title="wyrm.processing.filtfilt"><code class="xref py py-obj docutils literal"><span class="pre">filtfilt</span></code></a>(dat,&nbsp;b,&nbsp;a[,&nbsp;timeaxis])</td>
 <td>A forward-backward filter.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.jumping_means" title="wyrm.processing.jumping_means"><tt class="xref py py-obj docutils literal"><span class="pre">jumping_means</span></tt></a>(dat,&nbsp;ivals[,&nbsp;timeaxis])</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.jumping_means" title="wyrm.processing.jumping_means"><code class="xref py py-obj docutils literal"><span class="pre">jumping_means</span></code></a>(dat,&nbsp;ivals[,&nbsp;timeaxis])</td>
 <td>Calculate the jumping means.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.lda_apply" title="wyrm.processing.lda_apply"><tt class="xref py py-obj docutils literal"><span class="pre">lda_apply</span></tt></a>(fv,&nbsp;clf)</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.lda_apply" title="wyrm.processing.lda_apply"><code class="xref py py-obj docutils literal"><span class="pre">lda_apply</span></code></a>(fv,&nbsp;clf)</td>
 <td>Apply feature vector to LDA classifier.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.lda_train" title="wyrm.processing.lda_train"><tt class="xref py py-obj docutils literal"><span class="pre">lda_train</span></tt></a>(fv[,&nbsp;shrink])</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.lda_train" title="wyrm.processing.lda_train"><code class="xref py py-obj docutils literal"><span class="pre">lda_train</span></code></a>(fv[,&nbsp;shrink])</td>
 <td>Train the LDA classifier.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.lfilter" title="wyrm.processing.lfilter"><tt class="xref py py-obj docutils literal"><span class="pre">lfilter</span></tt></a>(dat,&nbsp;b,&nbsp;a[,&nbsp;zi,&nbsp;timeaxis])</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.lfilter" title="wyrm.processing.lfilter"><code class="xref py py-obj docutils literal"><span class="pre">lfilter</span></code></a>(dat,&nbsp;b,&nbsp;a[,&nbsp;zi,&nbsp;timeaxis])</td>
 <td>Filter data using the filter defined by the filter coefficients.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.lfilter_zi" title="wyrm.processing.lfilter_zi"><tt class="xref py py-obj docutils literal"><span class="pre">lfilter_zi</span></tt></a>(b,&nbsp;a[,&nbsp;n])</td>
-<td>Compute an initial state <tt class="docutils literal"><span class="pre">zi</span></tt> for the <a class="reference internal" href="wyrm.html#wyrm.processing.lfilter" title="wyrm.processing.lfilter"><tt class="xref py py-func docutils literal"><span class="pre">lfilter()</span></tt></a> function.</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.lfilter_zi" title="wyrm.processing.lfilter_zi"><code class="xref py py-obj docutils literal"><span class="pre">lfilter_zi</span></code></a>(b,&nbsp;a[,&nbsp;n])</td>
+<td>Compute an initial state <code class="docutils literal"><span class="pre">zi</span></code> for the <a class="reference internal" href="wyrm.html#wyrm.processing.lfilter" title="wyrm.processing.lfilter"><code class="xref py py-func docutils literal"><span class="pre">lfilter()</span></code></a> function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.logarithm" title="wyrm.processing.logarithm"><tt class="xref py py-obj docutils literal"><span class="pre">logarithm</span></tt></a>(dat)</td>
-<td>Computes the element wise natural logarithm of <tt class="docutils literal"><span class="pre">dat.data</span></tt>.</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.logarithm" title="wyrm.processing.logarithm"><code class="xref py py-obj docutils literal"><span class="pre">logarithm</span></code></a>(dat)</td>
+<td>Computes the element wise natural logarithm of <code class="docutils literal"><span class="pre">dat.data</span></code>.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.rectify_channels" title="wyrm.processing.rectify_channels"><tt class="xref py py-obj docutils literal"><span class="pre">rectify_channels</span></tt></a>(dat)</td>
-<td>Calculate the absolute values in <tt class="docutils literal"><span class="pre">dat.data</span></tt>.</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.rectify_channels" title="wyrm.processing.rectify_channels"><code class="xref py py-obj docutils literal"><span class="pre">rectify_channels</span></code></a>(dat)</td>
+<td>Calculate the absolute values in <code class="docutils literal"><span class="pre">dat.data</span></code>.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.remove_channels" title="wyrm.processing.remove_channels"><tt class="xref py py-obj docutils literal"><span class="pre">remove_channels</span></tt></a>(*args,&nbsp;**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.remove_channels" title="wyrm.processing.remove_channels"><code class="xref py py-obj docutils literal"><span class="pre">remove_channels</span></code></a>(*args,&nbsp;**kwargs)</td>
 <td>Remove channels from data.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.remove_classes" title="wyrm.processing.remove_classes"><tt class="xref py py-obj docutils literal"><span class="pre">remove_classes</span></tt></a>(*args,&nbsp;**kwargs)</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.remove_classes" title="wyrm.processing.remove_classes"><code class="xref py py-obj docutils literal"><span class="pre">remove_classes</span></code></a>(*args,&nbsp;**kwargs)</td>
 <td>Remove classes from an epoched Data object.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.remove_epochs" title="wyrm.processing.remove_epochs"><tt class="xref py py-obj docutils literal"><span class="pre">remove_epochs</span></tt></a>(*args,&nbsp;**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.remove_epochs" title="wyrm.processing.remove_epochs"><code class="xref py py-obj docutils literal"><span class="pre">remove_epochs</span></code></a>(*args,&nbsp;**kwargs)</td>
 <td>Remove epochs from an epoched Data object.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.segment_dat" title="wyrm.processing.segment_dat"><tt class="xref py py-obj docutils literal"><span class="pre">segment_dat</span></tt></a>(dat,&nbsp;marker_def,&nbsp;ival[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.rereference" title="wyrm.processing.rereference"><code class="xref py py-obj docutils literal"><span class="pre">rereference</span></code></a>(dat,&nbsp;chan[,&nbsp;chanaxis])</td>
+<td>Rereference all channels against a single channel</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.segment_dat" title="wyrm.processing.segment_dat"><code class="xref py py-obj docutils literal"><span class="pre">segment_dat</span></code></a>(dat,&nbsp;marker_def,&nbsp;ival[,&nbsp;...])</td>
 <td>Convert a continuous data object to an epoched one.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.select_channels" title="wyrm.processing.select_channels"><tt class="xref py py-obj docutils literal"><span class="pre">select_channels</span></tt></a>(dat,&nbsp;regexp_list[,&nbsp;invert,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.select_channels" title="wyrm.processing.select_channels"><code class="xref py py-obj docutils literal"><span class="pre">select_channels</span></code></a>(dat,&nbsp;regexp_list[,&nbsp;invert,&nbsp;...])</td>
 <td>Select channels from data.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.select_classes" title="wyrm.processing.select_classes"><tt class="xref py py-obj docutils literal"><span class="pre">select_classes</span></tt></a>(dat,&nbsp;indices[,&nbsp;invert,&nbsp;classaxis])</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.select_classes" title="wyrm.processing.select_classes"><code class="xref py py-obj docutils literal"><span class="pre">select_classes</span></code></a>(dat,&nbsp;indices[,&nbsp;invert,&nbsp;classaxis])</td>
 <td>Select classes from an epoched data object.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.select_epochs" title="wyrm.processing.select_epochs"><tt class="xref py py-obj docutils literal"><span class="pre">select_epochs</span></tt></a>(dat,&nbsp;indices[,&nbsp;invert,&nbsp;classaxis])</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.select_epochs" title="wyrm.processing.select_epochs"><code class="xref py py-obj docutils literal"><span class="pre">select_epochs</span></code></a>(dat,&nbsp;indices[,&nbsp;invert,&nbsp;classaxis])</td>
 <td>Select epochs from an epoched data object.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.select_ival" title="wyrm.processing.select_ival"><tt class="xref py py-obj docutils literal"><span class="pre">select_ival</span></tt></a>(dat,&nbsp;ival[,&nbsp;timeaxis])</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.select_ival" title="wyrm.processing.select_ival"><code class="xref py py-obj docutils literal"><span class="pre">select_ival</span></code></a>(dat,&nbsp;ival[,&nbsp;timeaxis])</td>
 <td>Select interval from data.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.sort_channels" title="wyrm.processing.sort_channels"><tt class="xref py py-obj docutils literal"><span class="pre">sort_channels</span></tt></a>(dat[,&nbsp;chanaxis])</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.sort_channels" title="wyrm.processing.sort_channels"><code class="xref py py-obj docutils literal"><span class="pre">sort_channels</span></code></a>(dat[,&nbsp;chanaxis])</td>
 <td>Sort channels.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.spectrogram" title="wyrm.processing.spectrogram"><tt class="xref py py-obj docutils literal"><span class="pre">spectrogram</span></tt></a>(cnt)</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.spectrogram" title="wyrm.processing.spectrogram"><code class="xref py py-obj docutils literal"><span class="pre">spectrogram</span></code></a>(cnt)</td>
 <td>Calculate the spectrogram of a continuous data object.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.spectrum" title="wyrm.processing.spectrum"><tt class="xref py py-obj docutils literal"><span class="pre">spectrum</span></tt></a>(dat[,&nbsp;timeaxis])</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.spectrum" title="wyrm.processing.spectrum"><code class="xref py py-obj docutils literal"><span class="pre">spectrum</span></code></a>(dat[,&nbsp;timeaxis])</td>
 <td>Calculate the spectrum of a data object.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.square" title="wyrm.processing.square"><tt class="xref py py-obj docutils literal"><span class="pre">square</span></tt></a>(dat)</td>
-<td>Computes the element wise square of <tt class="docutils literal"><span class="pre">dat.data</span></tt>.</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.square" title="wyrm.processing.square"><code class="xref py py-obj docutils literal"><span class="pre">square</span></code></a>(dat)</td>
+<td>Computes the element wise square of <code class="docutils literal"><span class="pre">dat.data</span></code>.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.stft" title="wyrm.processing.stft"><tt class="xref py py-obj docutils literal"><span class="pre">stft</span></tt></a>(x,&nbsp;width)</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.stft" title="wyrm.processing.stft"><code class="xref py py-obj docutils literal"><span class="pre">stft</span></code></a>(x,&nbsp;width)</td>
 <td>Short time fourier transform of a real sequence.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.subsample" title="wyrm.processing.subsample"><tt class="xref py py-obj docutils literal"><span class="pre">subsample</span></tt></a>(dat,&nbsp;freq[,&nbsp;timeaxis])</td>
-<td>Subsample the data to <tt class="docutils literal"><span class="pre">freq</span></tt> Hz.</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.subsample" title="wyrm.processing.subsample"><code class="xref py py-obj docutils literal"><span class="pre">subsample</span></code></a>(dat,&nbsp;freq[,&nbsp;timeaxis])</td>
+<td>Subsample the data to <code class="docutils literal"><span class="pre">freq</span></code> Hz.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.swapaxes" title="wyrm.processing.swapaxes"><tt class="xref py py-obj docutils literal"><span class="pre">swapaxes</span></tt></a>(dat,&nbsp;ax1,&nbsp;ax2)</td>
+<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.swapaxes" title="wyrm.processing.swapaxes"><code class="xref py py-obj docutils literal"><span class="pre">swapaxes</span></code></a>(dat,&nbsp;ax1,&nbsp;ax2)</td>
 <td>Swap axes of a Data object.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="wyrm.html#wyrm.processing.variance" title="wyrm.processing.variance"><tt class="xref py py-obj docutils literal"><span class="pre">variance</span></tt></a>(dat[,&nbsp;timeaxis])</td>
-<td>Compute the variance along the <tt class="docutils literal"><span class="pre">timeaxis</span></tt> of <tt class="docutils literal"><span class="pre">dat</span></tt>.</td>
+<tr class="row-odd"><td><a class="reference internal" href="wyrm.html#wyrm.processing.variance" title="wyrm.processing.variance"><code class="xref py py-obj docutils literal"><span class="pre">variance</span></code></a>(dat[,&nbsp;timeaxis])</td>
+<td>Compute the variance along the <code class="docutils literal"><span class="pre">timeaxis</span></code> of <code class="docutils literal"><span class="pre">dat</span></code>.</td>
 </tr>
 </tbody>
 </table>
@@ -184,9 +184,6 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">LW</span></tt></td>
-<td>alias of <tt class="xref py py-class docutils literal"><span class="pre">LedoitWolf</span></tt></td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -195,7 +192,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="wyrm.io.html"
@@ -203,7 +200,7 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="wyrm.plot.html"
                         title="next chapter">wyrm.plot</a></p>
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -220,7 +217,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -230,20 +227,17 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
           <a href="wyrm.plot.html" title="wyrm.plot"
              >next</a> |</li>
         <li class="right" >
           <a href="wyrm.io.html" title="wyrm.io"
              >previous</a> |</li>
-        <li><a href="../index.html">Wyrm 0.9.beta documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Wyrm 1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2012 - 2014, Bastian Venthur.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2012 - 2015, Bastian Venthur.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

@@ -32,6 +32,7 @@ wyrm.processing
       remove_channels
       remove_classes
       remove_epochs
+      rereference
       segment_dat
       select_channels
       select_classes
