@@ -1083,6 +1083,39 @@
     <span class="k">return</span> <span class="n">zi</span>
 
 </div>
+<div class="viewcode-block" id="calculate_whitening_matrix"><a class="viewcode-back" href="../../api/wyrm.html#wyrm.processing.calculate_whitening_matrix">[docs]</a><span class="k">def</span> <span class="nf">calculate_whitening_matrix</span><span class="p">(</span><span class="n">dat</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calculate whitening matrix from continuous data.</span>
+
+<span class="sd">    When applying the whitening matrix to continuous data, the</span>
+<span class="sd">    covariance matrix of the whitened data should have all 1s on the</span>
+<span class="sd">    diagonal and 0s on the resst.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    cnt : Data</span>
+<span class="sd">        continuous Data object</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    A : 2d array</span>
+<span class="sd">        the shape of the array is ``(channel, channel)``</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    &gt;&gt;&gt; a = calculate_whitening_matrix(cnt_train)</span>
+<span class="sd">    &gt;&gt;&gt; cnt_test = np.dot(cnt_test.data, a)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c"># TODO: iprove docstring and example, maybe it&#39;s time to implement</span>
+    <span class="c"># an `apply_spatial_filter` method</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">dat</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">d</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">d</span><span class="p">)))</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">a</span>
+
+</div>
 <div class="viewcode-block" id="clear_markers"><a class="viewcode-back" href="../../api/wyrm.html#wyrm.processing.clear_markers">[docs]</a><span class="k">def</span> <span class="nf">clear_markers</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span> <span class="n">timeaxis</span><span class="o">=-</span><span class="mi">2</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Remove markers that are outside of the ``dat`` time interval.</span>
 

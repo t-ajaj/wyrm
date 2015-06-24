@@ -8,6 +8,7 @@ New Methods
 ~~~~~~~~~~~
 
 * New method :meth:`wyrm.processing.rereference` for rereferencing channels
+* New method :meth:`wyrm.processing.calculate_whitening_matrix`
 
 Misc
 ~~~~

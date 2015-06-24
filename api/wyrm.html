@@ -122,7 +122,8 @@ classifier output.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>variables</strong> (<a class="reference external" href="http://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; the keys are the variable names and the values the values.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>variables</strong> (<em>dict</em>) &#8211;
+the keys are the variable names and the values the values.
 Those variables sent by the control signal are not set
 directly in the feedback. If you want this behave use
 <a class="reference internal" href="#wyrm.io.PyffComm.set_variables" title="wyrm.io.PyffComm.set_variables"><code class="xref py py-func docutils literal"><span class="pre">set_variables()</span></code></a></td>
@@ -141,7 +142,8 @@ loads a feedback.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fb</strong> (<a class="reference external" href="http://docs.python.org/library/string.html#module-string" title="(in Python v2.7)"><em>string</em></a>) &#8211; The name of the feedback.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fb</strong> (<em>string</em>) &#8211;
+The name of the feedback.</td>
 </tr>
 </tbody>
 </table>
@@ -161,8 +163,8 @@ messages to Pyff. You should not use this method directly.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>cmd</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; </li>
-<li><strong>data</strong> (<a class="reference external" href="http://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; </li>
+<li><strong>cmd</strong> (<em>str</em>)</li>
+<li><strong>data</strong> (<em>dict</em>)</li>
 </ul>
 </td>
 </tr>
@@ -180,7 +182,8 @@ currently running feedback.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>variables</strong> (<a class="reference external" href="http://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; The variable names are the keys, the values are the values
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>variables</strong> (<em>dict</em>) &#8211;
+The variable names are the keys, the values are the values
 of the variables.</td>
 </tr>
 </tbody>
@@ -209,23 +212,24 @@ filled with default vaules.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>data</strong> (<em>2d array</em>) &#8211; an 2 dimensional numpy array with the axes: (time, channel)</li>
-<li><strong>markers</strong> (<em>list of tuples: (float, str)</em>) &#8211; a list of markers. Each element is a tuple of timestamp and
+<li><strong>data</strong> (<em>2d array</em>) &#8211;
+an 2 dimensional numpy array with the axes: (time, channel)</li>
+<li><strong>markers</strong> (<em>list of tuples: (float, str)</em>) &#8211;
+a list of markers. Each element is a tuple of timestamp and
 string. The timestamp is the time in ms relative to the onset of
 the block of data. Note that negative values are <em>allowed</em> as
 well as values bigger than the length of the block of data
 returned. That is to be interpreted as a marker from the last
 block and a marker for a future block respectively.</li>
-<li><strong>fs</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; the sampling frequency, this number is used to calculate the
+<li><strong>fs</strong> (<em>float</em>) &#8211;
+the sampling frequency, this number is used to calculate the
 timeaxis for the data</li>
-<li><strong>channels</strong> (<em>list or 1d array of strings</em>) &#8211; the channel names</li>
+<li><strong>channels</strong> (<em>list or 1d array of strings</em>) &#8211;
+the channel names</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cnt</strong></p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">continuous <code class="docutils literal"><span class="pre">Data</span></code> object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>cnt</strong> (continuous <code class="docutils literal"><span class="pre">Data</span></code> object)</p>
 </td>
 </tr>
 </tbody>
@@ -255,12 +259,11 @@ already configured but not started yet:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; the file to load the data from</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<em>str</em>) &#8211;
+the file to load the data from</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> (<em>Data</em>) &#8211;
 the data loaded from the file</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></td>
 </tr>
 </tbody>
 </table>
@@ -292,12 +295,11 @@ download them separately from
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dirname</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; the directory where the <code class="docutils literal"><span class="pre">Competition_train.mat</span></code> and
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dirname</strong> (<em>str</em>) &#8211;
+the directory where the <code class="docutils literal"><span class="pre">Competition_train.mat</span></code> and
 <code class="docutils literal"><span class="pre">Competition_test.mat</span></code> are located</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>epo_train, epo_test</strong></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">epoched <code class="docutils literal"><span class="pre">Data</span></code> objects</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>epo_train, epo_test</strong> (epoched <code class="docutils literal"><span class="pre">Data</span></code> objects)</td>
 </tr>
 </tbody>
 </table>
@@ -325,11 +327,10 @@ download them separately from
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; The path to the matlab file to load</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<em>str</em>) &#8211;
+The path to the matlab file to load</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>cnt</strong></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">continuous <cite>Data</cite> object</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>cnt</strong> (continuous <cite>Data</cite> object)</td>
 </tr>
 </tbody>
 </table>
@@ -351,16 +352,15 @@ micro Volt.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vhdr</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Path to a VHDR file</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vhdr</strong> (<em>str</em>) &#8211;
+Path to a VHDR file</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> (<em>Data</em>) &#8211;
 Continuous Data with the additional attributes <code class="docutils literal"><span class="pre">.fs</span></code> for the
 sampling frequency and <code class="docutils literal"><span class="pre">.marker</span></code> for a list of markers. Each
 marker is a tuple of <code class="docutils literal"><span class="pre">(time</span> <span class="pre">in</span> <span class="pre">ms,</span> <span class="pre">marker)</span></code>.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">AssertionError</span></code> &#8211;
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">AssertionError</span></code> &#8211;
 If one of the consistency checks fails</td>
 </tr>
 </tbody>
@@ -385,13 +385,12 @@ continuous <code class="docutils literal"><span class="pre">Data</span></code> o
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Path to <cite>.meta</cite> file. A Mushu recording consists of three
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta</strong> (<em>str</em>) &#8211;
+Path to <cite>.meta</cite> file. A Mushu recording consists of three
 different files: <cite>.eeg</cite>, <cite>.marker</cite>, and <cite>.meta</cite>.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> (<em>Data</em>) &#8211;
 Continuous Data object</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></td>
 </tr>
 </tbody>
 </table>
@@ -410,8 +409,10 @@ Continuous Data object</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; <cite>Data</cite> object</li>
-<li><strong>filename</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Filename of the file to save to. If the filename does not end
+<li><strong>dat</strong> (<em>Data</em>) &#8211;
+<cite>Data</cite> object</li>
+<li><strong>filename</strong> (<em>str</em>) &#8211;
+Filename of the file to save to. If the filename does not end
 with <code class="docutils literal"><span class="pre">.npy</span></code>, the <code class="docutils literal"><span class="pre">.npy</span></code> extension will be automatically
 appended.</li>
 </ul>
@@ -476,20 +477,22 @@ colorbar.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>vmax</strong> (<em>vmin,</em>) &#8211; The minimum and maximum values for the colorbar.</li>
-<li><strong>ax</strong> (<em>Axes, optional</em>) &#8211; The axes to draw the scalp plot on. If not provided, the
+<li><strong>vmin, vmax</strong> (<em>float</em>) &#8211;
+The minimum and maximum values for the colorbar.</li>
+<li><strong>ax</strong> (<em>Axes, optional</em>) &#8211;
+The axes to draw the scalp plot on. If not provided, the
 currently activated axes (i.e. <code class="docutils literal"><span class="pre">gca()</span></code>) will be taken</li>
-<li><strong>label</strong> (<em>string, optional</em>) &#8211; The label for the colorbar</li>
-<li><strong>ticks</strong> (<em>list, optional</em>) &#8211; The tick positions</li>
-<li><strong>colormap</strong> (<em>matplotlib.colors.colormap, optional</em>) &#8211; A colormap to define the color transitions.</li>
+<li><strong>label</strong> (<em>string, optional</em>) &#8211;
+The label for the colorbar</li>
+<li><strong>ticks</strong> (<em>list, optional</em>) &#8211;
+The tick positions</li>
+<li><strong>colormap</strong> (<em>matplotlib.colors.colormap, optional</em>) &#8211;
+A colormap to define the color transitions.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ax</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>ax</strong> (<em>Axes</em>) &#8211;
 the axes on which the plot was drawn</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Axes</p>
 </td>
 </tr>
 </tbody>
@@ -513,25 +516,28 @@ positions to project them correctly on the scalp.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>v</strong> (<em>1d-array of floats</em>) &#8211; The values for the channels</li>
-<li><strong>channels</strong> (<em>1d array of strings</em>) &#8211; The corresponding channel names for the values in <code class="docutils literal"><span class="pre">v</span></code></li>
-<li><strong>ax</strong> (<em>Axes, optional</em>) &#8211; The axes to draw the scalp plot on. If not provided, the
+<li><strong>v</strong> (<em>1d-array of floats</em>) &#8211;
+The values for the channels</li>
+<li><strong>channels</strong> (<em>1d array of strings</em>) &#8211;
+The corresponding channel names for the values in <code class="docutils literal"><span class="pre">v</span></code></li>
+<li><strong>ax</strong> (<em>Axes, optional</em>) &#8211;
+The axes to draw the scalp plot on. If not provided, the
 currently activated axes (i.e. <code class="docutils literal"><span class="pre">gca()</span></code>) will be taken</li>
-<li><strong>annotate</strong> (<em>Boolean, optional</em>) &#8211; Draw the channel names next to the channel markers.</li>
-<li><strong>vmax</strong> (<em>vmin,</em>) &#8211; The display limits for the values in <code class="docutils literal"><span class="pre">v</span></code>. If the data in <code class="docutils literal"><span class="pre">v</span></code>
+<li><strong>annotate</strong> (<em>Boolean, optional</em>) &#8211;
+Draw the channel names next to the channel markers.</li>
+<li><strong>vmin, vmax</strong> (<em>float, optional</em>) &#8211;
+The display limits for the values in <code class="docutils literal"><span class="pre">v</span></code>. If the data in <code class="docutils literal"><span class="pre">v</span></code>
 contains values between -3..3 and <code class="docutils literal"><span class="pre">vmin</span></code> and <code class="docutils literal"><span class="pre">vmax</span></code> are set
 to -1 and 1, all values smaller than -1 and bigger than 1 will
 appear the same as -1 and 1. If not set, the maximum absolute
 value in <code class="docutils literal"><span class="pre">v</span></code> is taken to calculate both values.</li>
-<li><strong>colormap</strong> (<em>matplotlib.colors.colormap, optional</em>) &#8211; A colormap to define the color transitions.</li>
+<li><strong>colormap</strong> (<em>matplotlib.colors.colormap, optional</em>) &#8211;
+A colormap to define the color transitions.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ax</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>ax</strong> (<em>Axes</em>) &#8211;
 the axes on which the plot was drawn</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Axes</p>
 </td>
 </tr>
 </tbody>
@@ -572,18 +578,19 @@ colarized colors. It also does:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>cols_list</strong> (<em>[int]</em>) &#8211; List of ints. Every entry represents a row with as many channels
+<li><strong>cols_list</strong> (<em>[int]</em>) &#8211;
+List of ints. Every entry represents a row with as many channels
 as the value.</li>
-<li><strong>hpad</strong> (<em>float, optional</em>) &#8211; The amount of horizontal padding (default: 0.05).</li>
-<li><strong>vpad</strong> (<em>float, optional</em>) &#8211; The amount of vertical padding (default: 0.05).</li>
+<li><strong>hpad</strong> (<em>float, optional</em>) &#8211;
+The amount of horizontal padding (default: 0.05).</li>
+<li><strong>vpad</strong> (<em>float, optional</em>) &#8211;
+The amount of vertical padding (default: 0.05).</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A list of all rectangle positions in the form of [xi, xy, width,
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><em>[[float, float, float, float]]</em> &#8211;
+A list of all rectangle positions in the form of [xi, xy, width,
 height] sorted from top left to bottom right.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">[[float, float, float, float]]</p>
 </td>
 </tr>
 </tbody>
@@ -609,13 +616,12 @@ from <code class="docutils literal"><span class="pre">CHANNEL_10_20</span></code
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>channame</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Name of the channel, the search is case insensitive.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>channame</strong> (<em>str</em>) &#8211;
+Name of the channel, the search is case insensitive.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>x, y</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>x, y</strong> (<em>float or None</em>) &#8211;
 The projected point on the plane if the point is known,
 otherwise <code class="docutils literal"><span class="pre">None</span></code></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float or None</td>
 </tr>
 </tbody>
 </table>
@@ -640,7 +646,7 @@ otherwise <code class="docutils literal"><span class="pre">None</span></code></t
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; </td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dat</strong> (<em>Data</em>)</td>
 </tr>
 </tbody>
 </table>
@@ -659,27 +665,33 @@ can be adjusted.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>v</strong> (<em>[value]</em>) &#8211; List containing the values of the channels.</li>
-<li><strong>channels</strong> (<em>[String]</em>) &#8211; List containing the channel names.</li>
-<li><strong>levels</strong> (<em>int, optional</em>) &#8211; The number of automatically created levels in the contour plot
+<li><strong>v</strong> (<em>[value]</em>) &#8211;
+List containing the values of the channels.</li>
+<li><strong>channels</strong> (<em>[String]</em>) &#8211;
+List containing the channel names.</li>
+<li><strong>levels</strong> (<em>int, optional</em>) &#8211;
+The number of automatically created levels in the contour plot
 (default: 25).</li>
-<li><strong>colormap</strong> (<em>matplotlib.colors.colormap, optional</em>) &#8211; A colormap to define the color transitions (default: a
+<li><strong>colormap</strong> (<em>matplotlib.colors.colormap, optional</em>) &#8211;
+A colormap to define the color transitions (default: a
 blue-white-red colormap).</li>
-<li><strong>norm</strong> (<em>matplotlib.colors.norm, optional</em>) &#8211; A norm to define the min and max values (default: &#8216;None&#8217;, values
+<li><strong>norm</strong> (<em>matplotlib.colors.norm, optional</em>) &#8211;
+A norm to define the min and max values (default: &#8216;None&#8217;, values
 from -10 to 10 are assumed).</li>
-<li><strong>ticks</strong> (<em>array([ints]), optional</em>) &#8211; An array with values to define the ticks on the colorbar
+<li><strong>ticks</strong> (<em>array([ints]), optional</em>) &#8211;
+An array with values to define the ticks on the colorbar
 (default: &#8216;None&#8217;, 3 ticks at -10, 0 and 10 are displayed).</li>
-<li><strong>annotate</strong> (<em>Boolean, optional</em>) &#8211; Flag to switch channel annotations on or off (default: True).</li>
-<li><strong>position</strong> (<em>[x, y, width, height], optional</em>) &#8211; A Rectangle that limits the plot to its boundaries (default:
+<li><strong>annotate</strong> (<em>Boolean, optional</em>) &#8211;
+Flag to switch channel annotations on or off (default: True).</li>
+<li><strong>position</strong> (<em>[x, y, width, height], optional</em>) &#8211;
+A Rectangle that limits the plot to its boundaries (default:
 None).</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Returns a pair of Matplotlib.Axes. The first contains the
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><em>(Matplotlib.Axes, Matplotlib.Axes)</em> &#8211;
+Returns a pair of Matplotlib.Axes. The first contains the
 plotted scalp, the second the corresponding colorbar.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">(Matplotlib.Axes, Matplotlib.Axes)</p>
 </td>
 </tr>
 </tbody>
@@ -714,33 +726,42 @@ placed over their position on the scalp.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>v</strong> (<em>[value]</em>) &#8211; List containing the values of the channels.</li>
-<li><strong>channels</strong> (<em>[String]</em>) &#8211; List containing the channel names.</li>
-<li><strong>data</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>wyrm.types.Data</em></a>) &#8211; Data object containing the continuous data for the overlaying
+<li><strong>v</strong> (<em>[value]</em>) &#8211;
+List containing the values of the channels.</li>
+<li><strong>channels</strong> (<em>[String]</em>) &#8211;
+List containing the channel names.</li>
+<li><strong>data</strong> (<em>wyrm.types.Data</em>) &#8211;
+Data object containing the continuous data for the overlaying
 timeinterval plots.</li>
-<li><strong>interval</strong> (<em>[begin, end)</em>) &#8211; Tuple of ints to specify the range of the overlaying
+<li><strong>interval</strong> (<em>[begin, end)</em>) &#8211;
+Tuple of ints to specify the range of the overlaying
 timeinterval plots.</li>
-<li><strong>scale_ti</strong> (<em>float, optional</em>) &#8211; The percentage to scale the overlaying timeinterval plots
+<li><strong>scale_ti</strong> (<em>float, optional</em>) &#8211;
+The percentage to scale the overlaying timeinterval plots
 (default: 0.1).</li>
-<li><strong>levels</strong> (<em>int, optional</em>) &#8211; The number of automatically created levels in the contour plot
+<li><strong>levels</strong> (<em>int, optional</em>) &#8211;
+The number of automatically created levels in the contour plot
 (default: 25).</li>
-<li><strong>colormap</strong> (<em>matplotlib.colors.colormap, optional</em>) &#8211; A colormap to define the color transitions (default: a
+<li><strong>colormap</strong> (<em>matplotlib.colors.colormap, optional</em>) &#8211;
+A colormap to define the color transitions (default: a
 blue-white-red colormap).</li>
-<li><strong>norm</strong> (<em>matplotlib.colors.norm, optional</em>) &#8211; A norm to define the min and max values. If &#8216;None&#8217;, values from
+<li><strong>norm</strong> (<em>matplotlib.colors.norm, optional</em>) &#8211;
+A norm to define the min and max values. If &#8216;None&#8217;, values from
 -10 to 10 are assumed (default: None).</li>
-<li><strong>ticks</strong> (<em>array([ints]), optional</em>) &#8211; An array with values to define the ticks on the colorbar
+<li><strong>ticks</strong> (<em>array([ints]), optional</em>) &#8211;
+An array with values to define the ticks on the colorbar
 (default: None, 3  ticks at -10, 0 and 10 are displayed).</li>
-<li><strong>annotate</strong> (<em>Boolean, optional</em>) &#8211; Flag to switch channel annotations on or off (default: True).</li>
-<li><strong>position</strong> (<em>[x, y, width, height], optional</em>) &#8211; A Rectangle that limits the plot to its boundaries (default:
+<li><strong>annotate</strong> (<em>Boolean, optional</em>) &#8211;
+Flag to switch channel annotations on or off (default: True).</li>
+<li><strong>position</strong> (<em>[x, y, width, height], optional</em>) &#8211;
+A Rectangle that limits the plot to its boundaries (default:
 None).</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Returns a tuple of first a tuple with the plotted scalp and its
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><em>((Matplotlib.Axes, Matplotlib.Axes), [Matplotlib.Axes])</em> &#8211;
+Returns a tuple of first a tuple with the plotted scalp and its
 colorbar, then a list of all on top plotted timeintervals.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">((Matplotlib.Axes, Matplotlib.Axes), [Matplotlib.Axes])</p>
 </td>
 </tr>
 </tbody>
@@ -755,7 +776,8 @@ colorbar, then a list of all on top plotted timeintervals.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; epoched data</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dat</strong> (<em>Data</em>) &#8211;
+epoched data</td>
 </tr>
 </tbody>
 </table>
@@ -783,24 +805,28 @@ timeinterval plot.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>data</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>wyrm.types.Data</em></a>) &#8211; Data object containing the data to plot.</li>
-<li><strong>highlights</strong> (<em>[[int, int)]</em>) &#8211; List of tuples containing the start point (included) and end
+<li><strong>data</strong> (<em>wyrm.types.Data</em>) &#8211;
+Data object containing the data to plot.</li>
+<li><strong>highlights</strong> (<em>[[int, int)]</em>) &#8211;
+List of tuples containing the start point (included) and end
 point (excluded) of each area to be highlighted (default: None).</li>
-<li><strong>hcolors</strong> (<em>[colors], optional</em>) &#8211; A list of colors to use for the highlight areas (default: None).</li>
-<li><strong>legend</strong> (<em>Boolean, optional</em>) &#8211; Flag to switch plotting of the legend on or off (default: True).</li>
-<li><strong>scale</strong> (<em>Boolean, optional</em>) &#8211; Flag to switch plotting of a scale in the top right corner of
+<li><strong>hcolors</strong> (<em>[colors], optional</em>) &#8211;
+A list of colors to use for the highlight areas (default: None).</li>
+<li><strong>legend</strong> (<em>Boolean, optional</em>) &#8211;
+Flag to switch plotting of the legend on or off (default: True).</li>
+<li><strong>scale</strong> (<em>Boolean, optional</em>) &#8211;
+Flag to switch plotting of a scale in the top right corner of
 the grid (default: True)</li>
-<li><strong>reg_chans</strong> (<em>[regular expressions]</em>) &#8211; A list of regular expressions. The plot will be limited to those
+<li><strong>reg_chans</strong> (<em>[regular expressions]</em>) &#8211;
+A list of regular expressions. The plot will be limited to those
 channels matching the regular expressions.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Returns the plotted timeinterval axes as a list of
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><em>[Matplotlib.Axes], Matplotlib.Axes</em> &#8211;
+Returns the plotted timeinterval axes as a list of
 Matplotlib.Axes and the plotted scale as a single
 Matplotlib.Axes.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">[Matplotlib.Axes], Matplotlib.Axes</p>
 </td>
 </tr>
 </tbody>
@@ -831,26 +857,31 @@ data into a single timeinterval plot.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>data</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>wyrm.types.Data</em></a>) &#8211; Data object containing the data to plot.</li>
-<li><strong>r_square</strong> (<em>[values], optional</em>) &#8211; List containing r_squared values to be plotted beneath the main
+<li><strong>data</strong> (<em>wyrm.types.Data</em>) &#8211;
+Data object containing the data to plot.</li>
+<li><strong>r_square</strong> (<em>[values], optional</em>) &#8211;
+List containing r_squared values to be plotted beneath the main
 plot (default: None).</li>
-<li><strong>highlights</strong> (<em>[[int, int)]</em>) &#8211; List of tuples containing the start point (included) and end
+<li><strong>highlights</strong> (<em>[[int, int)]</em>) &#8211;
+List of tuples containing the start point (included) and end
 point (excluded) of each area to be highlighted (default: None).</li>
-<li><strong>hcolors</strong> (<em>[colors], optional</em>) &#8211; A list of colors to use for the highlights areas (default:
+<li><strong>hcolors</strong> (<em>[colors], optional</em>) &#8211;
+A list of colors to use for the highlights areas (default:
 None).</li>
-<li><strong>legend</strong> (<em>Boolean, optional</em>) &#8211; Flag to switch plotting of the legend on or off (default: True).</li>
-<li><strong>reg_chans</strong> (<em>[regular expression], optional</em>) &#8211; A list of regular expressions. The plot will be limited to those
+<li><strong>legend</strong> (<em>Boolean, optional</em>) &#8211;
+Flag to switch plotting of the legend on or off (default: True).</li>
+<li><strong>reg_chans</strong> (<em>[regular expression], optional</em>) &#8211;
+A list of regular expressions. The plot will be limited to those
 channels matching the regular expressions. (default: None).</li>
-<li><strong>position</strong> (<em>[x, y, width, height], optional</em>) &#8211; A Rectangle that limits the plot to its boundaries (default:
+<li><strong>position</strong> (<em>[x, y, width, height], optional</em>) &#8211;
+A Rectangle that limits the plot to its boundaries (default:
 None).</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The Matplotlib.Axes corresponding to the plotted timeinterval
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><em>Matplotlib.Axes or (Matplotlib.Axes, Matplotlib.Axes)</em> &#8211;
+The Matplotlib.Axes corresponding to the plotted timeinterval
 and, if provided, the Axes corresponding to r_squared values.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Matplotlib.Axes or (Matplotlib.Axes, Matplotlib.Axes)</p>
 </td>
 </tr>
 </tbody>
@@ -887,19 +918,22 @@ and, if provided, the Axes corresponding to r_squared values.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>highlights</strong> (<em>[(start, end)]</em>) &#8211; List of tuples containing the start point (included) and end
+<li><strong>highlights</strong> (<em>[(start, end)]</em>) &#8211;
+List of tuples containing the start point (included) and end
 point (excluded) of each area to be highlighted.</li>
-<li><strong>hcolors</strong> (<em>[colors], optional</em>) &#8211; A list of colors to use for the highlight areas (e.g. &#8216;b&#8217;,
+<li><strong>hcolors</strong> (<em>[colors], optional</em>) &#8211;
+A list of colors to use for the highlight areas (e.g. &#8216;b&#8217;,
 &#8216;#eeefff&#8217; or [R, G, B] for R, G, B = [0..1]. If left as None the
 colors blue, gree, red, cyan, magenta and yellow are used.</li>
-<li><strong>set_axes</strong> (<em>[matplotlib.axes.Axes], optional</em>) &#8211; List of axes to highlights (default: None, all axes of the
+<li><strong>set_axes</strong> (<em>[matplotlib.axes.Axes], optional</em>) &#8211;
+List of axes to highlights (default: None, all axes of the
 current figure will be highlighted).</li>
-<li><strong>Examples</strong> &#8211; </li>
-<li><strong>---------</strong> &#8211; </li>
-<li><strong>create two highlighted areas in all axes of the currently active</strong> (<em>To</em>) &#8211; </li>
-<li><strong>The first area from 200ms - 300ms in blue and the second</strong> (<em>figure.</em>) &#8211; </li>
-<li><strong>from 500ms - 600ms in green.</strong> (<em>area</em>) &#8211; </li>
-<li><strong>set_highlights([[200, 300], [500, 600]])</strong> (<em>&gt;&gt;&gt;</em>) &#8211; </li>
+<li><strong>Examples</strong></li>
+<li><strong>&#8212;&#8212;&#8212;</strong></li>
+<li><strong>To create two highlighted areas in all axes of the currently active</strong></li>
+<li><strong>figure. The first area from 200ms - 300ms in blue and the second</strong></li>
+<li><strong>area from 500ms - 600ms in green.</strong></li>
+<li><strong>&gt;&gt;&gt; set_highlights([[200, 300], [500, 600]])</strong></li>
 </ul>
 </td>
 </tr>
@@ -939,24 +973,23 @@ consider using <a class="reference internal" href="#wyrm.processing.append_cnt" 
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dat2</strong> (<em>dat,</em>) &#8211; </li>
-<li><strong>axis</strong> (<em>int, optional</em>) &#8211; the axis along which to concatenate. The default axis (0) does
+<li><strong>dat, dat2</strong> (<em>Data</em>)</li>
+<li><strong>axis</strong> (<em>int, optional</em>) &#8211;
+the axis along which to concatenate. The default axis (0) does
 the right thing for continuous and epoched data as it
 concatenates along the time- or the class-axis respectively.</li>
-<li><strong>extra</strong> (<em>list of strings, optional</em>) &#8211; a list of attributes in <code class="docutils literal"><span class="pre">dat</span></code> and <code class="docutils literal"><span class="pre">dat2</span></code> to concatenate as
+<li><strong>extra</strong> (<em>list of strings, optional</em>) &#8211;
+a list of attributes in <code class="docutils literal"><span class="pre">dat</span></code> and <code class="docutils literal"><span class="pre">dat2</span></code> to concatenate as
 well. Currently the attributes must have the types <code class="docutils literal"><span class="pre">list</span></code> or
 <code class="docutils literal"><span class="pre">ndarray</span></code>.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> (<em>Data</em>) &#8211;
 a copy of <code class="docutils literal"><span class="pre">dat</span></code> with <code class="docutils literal"><span class="pre">dat2</span></code> appended</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last">
 <li><p class="first"><code class="xref py py-exc docutils literal"><span class="pre">AssertionError</span></code> &#8211;
 if one of the following is true:</p>
 <blockquote>
@@ -1019,20 +1052,17 @@ markers will be treated properly (i.e. by moving the markers of
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dat2</strong> (<em>dat,</em>) &#8211; </li>
-<li><strong>timeaxis</strong> (<em>int, optional</em>) &#8211; </li>
-<li><strong>extra</strong> (<em>list of strings, optional</em>) &#8211; </li>
+<li><strong>dat, dat2</strong> (<em>Data</em>)</li>
+<li><strong>timeaxis</strong> (<em>int, optional</em>)</li>
+<li><strong>extra</strong> (<em>list of strings, optional</em>)</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> (<em>Data</em>) &#8211;
 the resulting combination of <code class="docutils literal"><span class="pre">dat</span></code> and <code class="docutils literal"><span class="pre">dat2</span></code></p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">AssertionError</span></code> &#8211;
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">AssertionError</span></code> &#8211;
 if at least one of the <code class="docutils literal"><span class="pre">Data</span></code> parameters has not the <code class="docutils literal"><span class="pre">.fs</span></code>
 attribute or if the <code class="docutils literal"><span class="pre">.fs</span></code> attributes are not equal.</p>
 </td>
@@ -1069,19 +1099,16 @@ attribute or if the <code class="docutils literal"><span class="pre">.fs</span><
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dat2</strong> (<em>dat,</em>) &#8211; </li>
-<li><strong>classaxis</strong> (<em>int, optional</em>) &#8211; </li>
-<li><strong>extra</strong> (<em>list of strings, optional</em>) &#8211; </li>
+<li><strong>dat, dat2</strong> (<em>Data</em>)</li>
+<li><strong>classaxis</strong> (<em>int, optional</em>)</li>
+<li><strong>extra</strong> (<em>list of strings, optional</em>)</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> (<em>Data</em>)</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211;
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211;
 if both objects have a <code class="docutils literal"><span class="pre">class_names</span></code> attribute, they must be
 equal</p>
 </td>
@@ -1108,21 +1135,21 @@ equal</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>epo</strong> (epoched <code class="docutils literal"><span class="pre">Data</span></code> object) &#8211; this method relies on the <code class="docutils literal"><span class="pre">epo</span></code> to have three dimensions in
+<li><strong>epo</strong> (epoched <code class="docutils literal"><span class="pre">Data</span></code> object) &#8211;
+this method relies on the <code class="docutils literal"><span class="pre">epo</span></code> to have three dimensions in
 the following order: class, time, channel</li>
-<li><strong>filt</strong> (<em>2d array</em>) &#8211; the CSP filter (i.e. the <code class="docutils literal"><span class="pre">v</span></code> return value from
+<li><strong>filt</strong> (<em>2d array</em>) &#8211;
+the CSP filter (i.e. the <code class="docutils literal"><span class="pre">v</span></code> return value from
 <a class="reference internal" href="#wyrm.processing.calculate_csp" title="wyrm.processing.calculate_csp"><code class="xref py py-func docutils literal"><span class="pre">calculate_csp()</span></code></a>)</li>
-<li><strong>columns</strong> (<em>array of ints, optional</em>) &#8211; the columns of the filter to use. The default is the first and
+<li><strong>columns</strong> (<em>array of ints, optional</em>) &#8211;
+the columns of the filter to use. The default is the first and
 the last one.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>epo</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>epo</strong> (epoched <code class="docutils literal"><span class="pre">Data</span></code> object) &#8211;
 The channels from the original have been replaced with the new
 virtual CSP channels.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">epoched <code class="docutils literal"><span class="pre">Data</span></code> object</p>
 </td>
 </tr>
 </tbody>
@@ -1151,8 +1178,10 @@ signals.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dat_y</strong> (<em>dat_x,</em>) &#8211; these data should have the same length on the time axis.</li>
-<li><strong>timeaxis</strong> (<em>int, optional</em>) &#8211; the index of the time axis in <code class="docutils literal"><span class="pre">dat_x</span></code> and <code class="docutils literal"><span class="pre">dat_y</span></code>.</li>
+<li><strong>dat_x, dat_y</strong> (<em>continuous Data object</em>) &#8211;
+these data should have the same length on the time axis.</li>
+<li><strong>timeaxis</strong> (<em>int, optional</em>) &#8211;
+the index of the time axis in <code class="docutils literal"><span class="pre">dat_x</span></code> and <code class="docutils literal"><span class="pre">dat_y</span></code>.</li>
 </ul>
 </td>
 </tr>
@@ -1204,20 +1233,19 @@ will calculate the average time course for each class and channel.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; an epoched Data object with a <code class="docutils literal"><span class="pre">.class_names</span></code> attribute.</li>
-<li><strong>classaxis</strong> (<em>int, optional</em>) &#8211; the axis along which to calculate the average</li>
+<li><strong>dat</strong> (<em>Data</em>) &#8211;
+an epoched Data object with a <code class="docutils literal"><span class="pre">.class_names</span></code> attribute.</li>
+<li><strong>classaxis</strong> (<em>int, optional</em>) &#8211;
+the axis along which to calculate the average</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> (<em>Data</em>) &#8211;
 copy of <code class="docutils literal"><span class="pre">dat</span></code> a witht the <code class="docutils literal"><span class="pre">classaxis</span></code> dimension reduced to
 the number of different classes.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">AssertionError</span></code> &#8211;
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">AssertionError</span></code> &#8211;
 if the <code class="docutils literal"><span class="pre">dat</span></code> has no <code class="docutils literal"><span class="pre">.class_names</span></code> attribute.</p>
 </td>
 </tr>
@@ -1264,9 +1292,11 @@ the columns of the patterns and filters.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>epo</strong> (<em>epoched Data object</em>) &#8211; this method relies on the <code class="docutils literal"><span class="pre">epo</span></code> to have three dimensions in
+<li><strong>epo</strong> (<em>epoched Data object</em>) &#8211;
+this method relies on the <code class="docutils literal"><span class="pre">epo</span></code> to have three dimensions in
 the following order: class, time, channel</li>
-<li><strong>classes</strong> (<em>list of two ints, optional</em>) &#8211; If <code class="docutils literal"><span class="pre">None</span></code> the first two different class indices found in
+<li><strong>classes</strong> (<em>list of two ints, optional</em>) &#8211;
+If <code class="docutils literal"><span class="pre">None</span></code> the first two different class indices found in
 <code class="docutils literal"><span class="pre">epo.axes[0]</span></code> are chosen automatically otherwise the class
 indices can be manually chosen by setting <code class="docutils literal"><span class="pre">classes</span></code></li>
 </ul>
@@ -1318,17 +1348,16 @@ different classes in the <code class="docutils literal"><span class="pre">epo</s
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; epoched data</li>
-<li><strong>classaxis</strong> (<em>int, optional</em>) &#8211; the axis to be treatet as the classaxis</li>
+<li><strong>dat</strong> (<em>Data</em>) &#8211;
+epoched data</li>
+<li><strong>classaxis</strong> (<em>int, optional</em>) &#8211;
+the axis to be treatet as the classaxis</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>signed_r_square</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>signed_r_square</strong> (<em>ndarray</em>) &#8211;
 the signed r**2 values, signed_r_square has one axis less than
 the <code class="docutils literal"><span class="pre">dat</span></code> parameter, the <code class="docutils literal"><span class="pre">classaxis</span></code> has been removed</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
 </td>
 </tr>
 </tbody>
@@ -1365,7 +1394,8 @@ remove these epochs if possible before calling this function!</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>epo</strong> (<em>epoched Data oject</em>) &#8211; this method relies on the <code class="docutils literal"><span class="pre">epo</span></code> to have three dimensions in
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>epo</strong> (<em>epoched Data oject</em>) &#8211;
+this method relies on the <code class="docutils literal"><span class="pre">epo</span></code> to have three dimensions in
 the following order: class, time, channel. The data in epo
 should be band-pass filtered for the frequency band of interest.
 The values of the target variable (i.e. <code class="docutils literal"><span class="pre">epo.axes[0]</span></code>) must be
@@ -1448,6 +1478,32 @@ NeuroImage, 87:96-110, 2014</td></tr>
 </dd></dl>
 
 <dl class="function">
+<dt id="wyrm.processing.calculate_whitening_matrix">
+<code class="descclassname">wyrm.processing.</code><code class="descname">calculate_whitening_matrix</code><span class="sig-paren">(</span><em>dat</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/wyrm/processing.html#calculate_whitening_matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#wyrm.processing.calculate_whitening_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate whitening matrix from continuous data.</p>
+<p>When applying the whitening matrix to continuous data, the
+covariance matrix of the whitened data should have all 1s on the
+diagonal and 0s on the resst.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cnt</strong> (<em>Data</em>) &#8211;
+continuous Data object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>A</strong> (<em>2d array</em>) &#8211;
+the shape of the array is <code class="docutils literal"><span class="pre">(channel,</span> <span class="pre">channel)</span></code></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">calculate_whitening_matrix</span><span class="p">(</span><span class="n">cnt_train</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cnt_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">cnt_test</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
 <dt id="wyrm.processing.clear_markers">
 <code class="descclassname">wyrm.processing.</code><code class="descname">clear_markers</code><span class="sig-paren">(</span><em>dat</em>, <em>timeaxis=-2</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/wyrm/processing.html#clear_markers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#wyrm.processing.clear_markers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove markers that are outside of the <code class="docutils literal"><span class="pre">dat</span></code> time interval.</p>
@@ -1461,19 +1517,16 @@ are empty, simply a copy of <code class="docutils literal"><span class="pre">dat
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; </li>
-<li><strong>timeaxis</strong> (<em>int, optional</em>) &#8211; </li>
+<li><strong>dat</strong> (<em>Data</em>)</li>
+<li><strong>timeaxis</strong> (<em>int, optional</em>)</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> (<em>Data</em>) &#8211;
 a copy of the Data object, with the respective markers removed</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">AssertionError</span></code> &#8211;
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">AssertionError</span></code> &#8211;
 if the given <code class="docutils literal"><span class="pre">dat</span></code> has not <code class="docutils literal"><span class="pre">fs</span></code> attribute</p>
 </td>
 </tr>
@@ -1506,20 +1559,19 @@ from the channel data within this epoch and channel.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dat</strong> (<em>Dat</em>) &#8211; </li>
-<li><strong>ival</strong> (<em>array of two floats</em>) &#8211; the start and stop borders in milli seconds. the left border is
+<li><strong>dat</strong> (<em>Dat</em>)</li>
+<li><strong>ival</strong> (<em>array of two floats</em>) &#8211;
+the start and stop borders in milli seconds. the left border is
 included, the right border is not: <code class="docutils literal"><span class="pre">[start,</span> <span class="pre">stop)</span></code>.
 <code class="docutils literal"><span class="pre">ival[0]</span></code> must fit into <code class="docutils literal"><span class="pre">dat.axes[timeaxis]</span></code> and
 <code class="docutils literal"><span class="pre">ival[0]</span> <span class="pre">&lt;=</span> <span class="pre">ival[1]</span></code>.</li>
-<li><strong>timeaxis</strong> (<em>int, optional</em>) &#8211; the axis along which to correct for the baseline</li>
+<li><strong>timeaxis</strong> (<em>int, optional</em>) &#8211;
+the axis along which to correct for the baseline</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>dat</strong> (<em>Dat</em>) &#8211;
 a copy of <code class="docutils literal"><span class="pre">dat</span></code> with the averages of the intervals subtracted.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Dat</p>
 </td>
 </tr>
 </tbody>
@@ -1565,17 +1617,15 @@ appropriate class.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; </li>
-<li><strong>classaxis</strong> (<em>int, optional</em>) &#8211; the index of the class axis</li>
+<li><strong>dat</strong> (<em>Data</em>)</li>
+<li><strong>classaxis</strong> (<em>int, optional</em>) &#8211;
+the index of the class axis</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>dat</strong> (<em>Data</em>) &#8211;
 a copy of <code class="docutils literal"><span class="pre">dat</span></code> with reshaped to 2 dimensions and with the
 classaxis moved to dimension 0</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></p>
 </td>
 </tr>
 </tbody>
@@ -1603,18 +1653,19 @@ defined by the filter coefficients.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; the data to be filtered</li>
-<li><strong>b</strong> (<em>1-d array</em>) &#8211; the numerator coefficient vector</li>
-<li><strong>a</strong> (<em>1-d array</em>) &#8211; the denominator coefficient vector</li>
-<li><strong>timeaxis</strong> (<em>int, optional</em>) &#8211; the axes in <code class="docutils literal"><span class="pre">data</span></code> to filter along to</li>
+<li><strong>dat</strong> (<em>Data</em>) &#8211;
+the data to be filtered</li>
+<li><strong>b</strong> (<em>1-d array</em>) &#8211;
+the numerator coefficient vector</li>
+<li><strong>a</strong> (<em>1-d array</em>) &#8211;
+the denominator coefficient vector</li>
+<li><strong>timeaxis</strong> (<em>int, optional</em>) &#8211;
+the axes in <code class="docutils literal"><span class="pre">data</span></code> to filter along to</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>dat</strong> (<em>Data</em>) &#8211;
 the filtered output</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></p>
 </td>
 </tr>
 </tbody>
@@ -1651,20 +1702,19 @@ the filtered output</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; </li>
-<li><strong>ivals</strong> (<em>array of [float, float]</em>) &#8211; the intervals for which to calculate the means. Start is
+<li><strong>dat</strong> (<em>Data</em>)</li>
+<li><strong>ivals</strong> (<em>array of [float, float]</em>) &#8211;
+the intervals for which to calculate the means. Start is
 included end is not (like <code class="docutils literal"><span class="pre">[start,</span> <span class="pre">end)</span></code>).</li>
-<li><strong>timeaxis</strong> (<em>int, optional</em>) &#8211; the axis along which to calculate the jumping means</li>
+<li><strong>timeaxis</strong> (<em>int, optional</em>) &#8211;
+the axis along which to calculate the jumping means</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>dat</strong> (<em>Data</em>) &#8211;
 copy of <code class="docutils literal"><span class="pre">dat</span></code> with the jumping means along the <code class="docutils literal"><span class="pre">timeaxis</span></code>.
 <code class="docutils literal"><span class="pre">dat.name[timeaxis]</span></code> and <code class="docutils literal"><span class="pre">dat.axes[timeaxis]</span></code> Are modified
 too to reflect the intervals used for the data points.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></p>
 </td>
 </tr>
 </tbody>
@@ -1680,17 +1730,15 @@ too to reflect the intervals used for the data points.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>fv</strong> (<code class="docutils literal"><span class="pre">Data</span></code> object) &#8211; the feature vector must have a 2 dimensional data, the first
+<li><strong>fv</strong> (<code class="docutils literal"><span class="pre">Data</span></code> object) &#8211;
+the feature vector must have a 2 dimensional data, the first
 dimension being the class axis.</li>
-<li><strong>clf</strong> (<em>(1d array, float)</em>) &#8211; </li>
+<li><strong>clf</strong> (<em>(1d array, float)</em>)</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>out</strong> (<em>1d array</em>) &#8211;
 The projection of the data on the hyperplane.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">1d array</p>
 </td>
 </tr>
 </tbody>
@@ -1715,10 +1763,12 @@ The projection of the data on the hyperplane.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>fv</strong> (<code class="docutils literal"><span class="pre">Data</span></code> object) &#8211; the feature vector must have 2 dimensional data, the first
+<li><strong>fv</strong> (<code class="docutils literal"><span class="pre">Data</span></code> object) &#8211;
+the feature vector must have 2 dimensional data, the first
 dimension being the class axis. The unique class labels must be
 0 and 1 otherwise a <code class="docutils literal"><span class="pre">ValueError</span></code> will be raised.</li>
-<li><strong>shrink</strong> (<em>Boolean, optional</em>) &#8211; use shrinkage</li>
+<li><strong>shrink</strong> (<em>Boolean, optional</em>) &#8211;
+use shrinkage</li>
 </ul>
 </td>
 </tr>
@@ -1756,20 +1806,22 @@ dimension being the class axis. The unique class labels must be
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; the data to be filtered</li>
-<li><strong>b</strong> (<em>1-d array</em>) &#8211; the numerator coefficient vector</li>
-<li><strong>a</strong> (<em>1-d array</em>) &#8211; the denominator coefficient vector</li>
-<li><strong>zi</strong> (<em>nd array, optional</em>) &#8211; the initial conditions for the filter delay. If zi is <code class="docutils literal"><span class="pre">None</span></code>
+<li><strong>dat</strong> (<em>Data</em>) &#8211;
+the data to be filtered</li>
+<li><strong>b</strong> (<em>1-d array</em>) &#8211;
+the numerator coefficient vector</li>
+<li><strong>a</strong> (<em>1-d array</em>) &#8211;
+the denominator coefficient vector</li>
+<li><strong>zi</strong> (<em>nd array, optional</em>) &#8211;
+the initial conditions for the filter delay. If zi is <code class="docutils literal"><span class="pre">None</span></code>
 or not given, initial rest is assumed.</li>
-<li><strong>timeaxis</strong> (<em>int, optional</em>) &#8211; the axes in <code class="docutils literal"><span class="pre">data</span></code> to filter along to</li>
+<li><strong>timeaxis</strong> (<em>int, optional</em>) &#8211;
+the axes in <code class="docutils literal"><span class="pre">data</span></code> to filter along to</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>dat</strong> (<em>Data</em>) &#8211;
 the filtered output</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></p>
 </td>
 </tr>
 </tbody>
@@ -1826,18 +1878,17 @@ want to filter n-dimensional data like multi channel EEG.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>a</strong> (<em>b,</em>) &#8211; The IIR filter coefficients</li>
-<li><strong>n</strong> (<em>int, optional</em>) &#8211; The desired width of the output vector. If <code class="docutils literal"><span class="pre">n</span> <span class="pre">==</span> <span class="pre">1</span></code> the output
+<li><strong>b, a</strong> (<em>1-d array</em>) &#8211;
+The IIR filter coefficients</li>
+<li><strong>n</strong> (<em>int, optional</em>) &#8211;
+The desired width of the output vector. If <code class="docutils literal"><span class="pre">n</span> <span class="pre">==</span> <span class="pre">1</span></code> the output
 is simply the 1d zi vector. For <code class="docutils literal"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>, the zi vector is
 repeated <code class="docutils literal"><span class="pre">n</span></code> times.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>zi</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>zi</strong> (<em>n-d array</em>) &#8211;
 The initial state of the filter.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">n-d array</p>
 </td>
 </tr>
 </tbody>
@@ -1876,13 +1927,12 @@ The initial state of the filter.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; a Data object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dat</strong> (<em>Data</em>) &#8211;
+a Data object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> (<em>Data</em>) &#8211;
 a copy of <code class="docutils literal"><span class="pre">dat</span></code> with the element wise natural logarithms of
 the values in <code class="docutils literal"><span class="pre">.data</span></code></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></td>
 </tr>
 </tbody>
 </table>
@@ -1900,12 +1950,10 @@ the values in <code class="docutils literal"><span class="pre">.data</span></cod
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; </td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dat</strong> (<em>Data</em>)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> (<em>Data</em>) &#8211;
 a copy of <code class="docutils literal"><span class="pre">dat</span></code> with all values absolute in <code class="docutils literal"><span class="pre">.data</span></code></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></td>
 </tr>
 </tbody>
 </table>
@@ -1929,10 +1977,8 @@ parameters and the <code class="docutils literal"><span class="pre">invert</span
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> &#8211;
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> (<em>Data</em>) &#8211;
 A copy of the dat with the channels removed.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></td>
 </tr>
 </tbody>
 </table>
@@ -1955,10 +2001,8 @@ parameter set to <code class="docutils literal"><span class="pre">True</span></c
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> &#8211;
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> (<em>Data</em>) &#8211;
 copy of Data object with the classes removed</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></td>
 </tr>
 </tbody>
 </table>
@@ -1978,10 +2022,8 @@ paramerter set to <code class="docutils literal"><span class="pre">True</span></
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> &#8211;
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> (<em>Data</em>) &#8211;
 epoched Data object with the epochs removed</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></td>
 </tr>
 </tbody>
 </table>
@@ -2004,18 +2046,18 @@ zero.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; continuous or epoched Data</li>
-<li><strong>chan</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; the name of the channel to use as reference. The name is case
+<li><strong>dat</strong> (<em>Data</em>) &#8211;
+continuous or epoched Data</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211;
+the name of the channel to use as reference. The name is case
 insensitive</li>
-<li><strong>chanaxis</strong> (<em>int, optional</em>) &#8211; the axis that contains the channels</li>
+<li><strong>chanaxis</strong> (<em>int, optional</em>) &#8211;
+the axis that contains the channels</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>dat</strong> (<em>Dat</em>) &#8211;
 a copy of <code class="docutils literal"><span class="pre">dat</span></code> with the channels rereferenced</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Dat</p>
 </td>
 </tr>
 </tbody>
@@ -2056,17 +2098,24 @@ at the Examples below.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; the data object to be segmented</li>
-<li><strong>marker_def</strong> (<a class="reference external" href="http://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; The keys are class names, the values are lists of markers</li>
-<li><strong>ival</strong> (<em>[int, int]</em>) &#8211; The interval in milliseconds to cut around the markers. I.e. to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first">
+<li><p class="first"><strong>dat</strong> (<em>Data</em>) &#8211;
+the data object to be segmented</p>
+</li>
+<li><p class="first"><strong>marker_def</strong> (<em>dict</em>) &#8211;
+The keys are class names, the values are lists of markers</p>
+</li>
+<li><p class="first"><strong>ival</strong> (<em>[int, int]</em>) &#8211;
+The interval in milliseconds to cut around the markers. I.e. to
 get the interval starting with the marker plus the remaining
 100ms define the interval like [0, 100]. The start point is
 included, the endpoint is not (like: <code class="docutils literal"><span class="pre">[start,</span> <span class="pre">end)</span></code>).  To get
 200ms before the marker until 100ms after the marker do:
 <code class="docutils literal"><span class="pre">[-200,</span> <span class="pre">100]</span></code> Only negative or positive values are possible
-(i.e. <code class="docutils literal"><span class="pre">[-500,</span> <span class="pre">-100]</span></code>)</li>
-<li><strong>newsamples</strong> (<em>int, optional</em>) &#8211; <p>consider the last <code class="docutils literal"><span class="pre">newsamples</span></code> samples as new data and only
+(i.e. <code class="docutils literal"><span class="pre">[-500,</span> <span class="pre">-100]</span></code>)</p>
+</li>
+<li><p class="first"><strong>newsamples</strong> (<em>int, optional</em>) &#8211;
+consider the last <code class="docutils literal"><span class="pre">newsamples</span></code> samples as new data and only
 return epochs which are possible with the old <strong>and</strong> the new
 data (i.e. don&#8217;t include epochs which where possible without the
 new data).</p>
@@ -2081,18 +2130,17 @@ the new samples. To make sure each epoch appears only once
 within all iterations, <code class="docutils literal"><span class="pre">segment_dat</span></code> needs to know the number
 of new samples.</p>
 </li>
-<li><strong>timeaxis</strong> (<em>int, optional</em>) &#8211; the axis along which the segmentation will take place</li>
+<li><p class="first"><strong>timeaxis</strong> (<em>int, optional</em>) &#8211;
+the axis along which the segmentation will take place</p>
+</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> (<em>Data</em>) &#8211;
 a copy of the resulting epoched data.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><code class="xref py py-exc docutils literal"><span class="pre">AssertionError</span></code> &#8211;</p>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><code class="xref py py-exc docutils literal"><span class="pre">AssertionError</span></code> &#8211;</p>
 <ul class="last simple">
 <li>if <code class="docutils literal"><span class="pre">dat</span></code> has not <code class="docutils literal"><span class="pre">.fs</span></code> or <code class="docutils literal"><span class="pre">.markers</span></code> attribute or if
 <code class="docutils literal"><span class="pre">ival[0]</span> <span class="pre">&gt;</span> <span class="pre">ival[1]</span></code>.</li>
@@ -2147,27 +2195,30 @@ has to match the whole channel name string</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; </li>
-<li><strong>regexp_list</strong> (<em>list of regular expressions</em>) &#8211; <p>The regular expressions provided, are used directly by Python&#8217;s
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first">
+<li><p class="first"><strong>dat</strong> (<em>Data</em>)</p>
+</li>
+<li><p class="first"><strong>regexp_list</strong> (<em>list of regular expressions</em>) &#8211;
+The regular expressions provided, are used directly by Python&#8217;s
 <a class="reference external" href="http://docs.python.org/library/re.html#module-re" title="(in Python v2.7)"><code class="xref py py-mod docutils literal"><span class="pre">re</span></code></a> module, so all regular expressions which are understood
 by this module are allowed.</p>
 <p>Internally the <a class="reference external" href="http://docs.python.org/library/re.html#re.match" title="(in Python v2.7)"><code class="xref py py-func docutils literal"><span class="pre">re.match()</span></code></a> method is used, additionally to
 check for a match (which also matches substrings), it is also
 checked if the whole string matched the pattern.</p>
 </li>
-<li><strong>invert</strong> (<em>Boolean, optional</em>) &#8211; If True the selection is inverted. Instead of selecting specific
-channels, you are removing the channels. (default: False)</li>
-<li><strong>chanaxis</strong> (<em>int, optional</em>) &#8211; the index of the channel axis in <code class="docutils literal"><span class="pre">dat</span></code> (default: -1)</li>
+<li><p class="first"><strong>invert</strong> (<em>Boolean, optional</em>) &#8211;
+If True the selection is inverted. Instead of selecting specific
+channels, you are removing the channels. (default: False)</p>
+</li>
+<li><p class="first"><strong>chanaxis</strong> (<em>int, optional</em>) &#8211;
+the index of the channel axis in <code class="docutils literal"><span class="pre">dat</span></code> (default: -1)</p>
+</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>dat</strong> (<em>Data</em>) &#8211;
 A copy of <code class="docutils literal"><span class="pre">dat</span></code> with the channels, matched by the list of
 regular expressions.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></p>
 </td>
 </tr>
 </tbody>
@@ -2207,22 +2258,23 @@ array:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; epoched Data object</li>
-<li><strong>indices</strong> (<em>array of ints</em>) &#8211; The indices of the classes to select.</li>
-<li><strong>invert</strong> (<em>Boolean, optional</em>) &#8211; if true keep all classes except the ones defined by <code class="docutils literal"><span class="pre">indices</span></code>.</li>
-<li><strong>classaxis</strong> (<em>int, optional</em>) &#8211; the axis along which the classes are selected</li>
+<li><strong>dat</strong> (<em>Data</em>) &#8211;
+epoched Data object</li>
+<li><strong>indices</strong> (<em>array of ints</em>) &#8211;
+The indices of the classes to select.</li>
+<li><strong>invert</strong> (<em>Boolean, optional</em>) &#8211;
+if true keep all classes except the ones defined by <code class="docutils literal"><span class="pre">indices</span></code>.</li>
+<li><strong>classaxis</strong> (<em>int, optional</em>) &#8211;
+the axis along which the classes are selected</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> (<em>Data</em>) &#8211;
 a copy of the epoched data with only the selected classes
 included.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">AssertionError</span></code> &#8211;
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">AssertionError</span></code> &#8211;
 if <code class="docutils literal"><span class="pre">dat</span></code> has no <code class="docutils literal"><span class="pre">.class_names</span></code> attribute.</p>
 </td>
 </tr>
@@ -2261,21 +2313,22 @@ if <code class="docutils literal"><span class="pre">dat</span></code> has no <co
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; epoched Data object with an <code class="docutils literal"><span class="pre">.class_names</span></code> attribute</li>
-<li><strong>indices</strong> (<em>array of ints</em>) &#8211; The indices of the elements to select.</li>
-<li><strong>invert</strong> (<em>Boolean, optional</em>) &#8211; if true keep all elements except the ones defined by <code class="docutils literal"><span class="pre">indices</span></code>.</li>
-<li><strong>classaxis</strong> (<em>int, optional</em>) &#8211; the axis along which the epochs are selected</li>
+<li><strong>dat</strong> (<em>Data</em>) &#8211;
+epoched Data object with an <code class="docutils literal"><span class="pre">.class_names</span></code> attribute</li>
+<li><strong>indices</strong> (<em>array of ints</em>) &#8211;
+The indices of the elements to select.</li>
+<li><strong>invert</strong> (<em>Boolean, optional</em>) &#8211;
+if true keep all elements except the ones defined by <code class="docutils literal"><span class="pre">indices</span></code>.</li>
+<li><strong>classaxis</strong> (<em>int, optional</em>) &#8211;
+the axis along which the epochs are selected</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> (<em>Data</em>) &#8211;
 a copy of the epoched data with only the selected epochs included.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">AssertionError</span></code> &#8211;
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">AssertionError</span></code> &#8211;
 if <code class="docutils literal"><span class="pre">dat</span></code> has no <code class="docutils literal"><span class="pre">.class_names</span></code> attribute.</p>
 </td>
 </tr>
@@ -2316,21 +2369,20 @@ the returned Data object.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; </li>
-<li><strong>ival</strong> (<em>list of two floats</em>) &#8211; Start and end in milliseconds. Start is included end is excluded
+<li><strong>dat</strong> (<em>Data</em>)</li>
+<li><strong>ival</strong> (<em>list of two floats</em>) &#8211;
+Start and end in milliseconds. Start is included end is excluded
 (like <code class="docutils literal"><span class="pre">[stard,</span> <span class="pre">end)</span></code>]</li>
-<li><strong>timeaxis</strong> (<em>int, optional</em>) &#8211; the axis along which the intervals are selected</li>
+<li><strong>timeaxis</strong> (<em>int, optional</em>) &#8211;
+the axis along which the intervals are selected</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> (<em>Data</em>) &#8211;
 a copy of <code class="docutils literal"><span class="pre">dat</span></code> with the selected time intervals.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">AssertionError</span></code> &#8211;
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">AssertionError</span></code> &#8211;
 if the given interval does not fit into <code class="docutils literal"><span class="pre">dat.axes[timeaxis]</span></code>
 or <code class="docutils literal"><span class="pre">ival[0]</span> <span class="pre">&gt;</span> <span class="pre">ival[1]</span></code>.</p>
 </td>
@@ -2363,17 +2415,15 @@ unknown channel names to the back of the resulting list.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dat</strong> (<code class="docutils literal"><span class="pre">Data</span></code> object) &#8211; </li>
-<li><strong>chanaxis</strong> (<em>int, optional</em>) &#8211; the index of the channel axis in <code class="docutils literal"><span class="pre">dat</span></code></li>
+<li><strong>dat</strong> (<code class="docutils literal"><span class="pre">Data</span></code> object)</li>
+<li><strong>chanaxis</strong> (<em>int, optional</em>) &#8211;
+the index of the channel axis in <code class="docutils literal"><span class="pre">dat</span></code></li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>dat</strong> (<code class="docutils literal"><span class="pre">Data</span></code> object) &#8211;
 a copy of the <code class="docutils literal"><span class="pre">dat</span></code> parameter with the channels and data
 sorted.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><code class="docutils literal"><span class="pre">Data</span></code> object</p>
 </td>
 </tr>
 </tbody>
@@ -2441,18 +2491,17 @@ respective frequencies.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; Data object with <cite>.fs</cite> attribute</li>
-<li><strong>timeaxis</strong> (<em>int, optional</em>) &#8211; axis to perform the fft along</li>
+<li><strong>dat</strong> (<em>Data</em>) &#8211;
+Data object with <cite>.fs</cite> attribute</li>
+<li><strong>timeaxis</strong> (<em>int, optional</em>) &#8211;
+axis to perform the fft along</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>dat</strong> (<em>Data</em>) &#8211;
 Data object with the timeaxis transformed into the frequency
 domain. The values of the spectrum are the amplitudes of the
 respective frequencies.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></p>
 </td>
 </tr>
 </tbody>
@@ -2493,13 +2542,12 @@ if the <code class="docutils literal"><span class="pre">dat</span></code> parame
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; a Data object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dat</strong> (<em>Data</em>) &#8211;
+a Data object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> (<em>Data</em>) &#8211;
 a copy of <code class="docutils literal"><span class="pre">dat</span></code> with the element wise squares of the values in
 <code class="docutils literal"><span class="pre">.data</span></code></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></td>
 </tr>
 </tbody>
 </table>
@@ -2524,17 +2572,15 @@ calculating the Fourier transform.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> (<em>ndarray</em>) &#8211; </li>
-<li><strong>width</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; the width of the sliding window in samples</li>
+<li><strong>x</strong> (<em>ndarray</em>)</li>
+<li><strong>width</strong> (<em>int</em>) &#8211;
+the width of the sliding window in samples</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>fourier</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>fourier</strong> (<em>2d complex array</em>) &#8211;
 the dimensions are time, frequency; the frequencies are evenly
 binned from 0 to f_nyquist</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">2d complex array</p>
 </td>
 </tr>
 </tbody>
@@ -2579,17 +2625,17 @@ Examples below).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; Data object with <code class="docutils literal"><span class="pre">.fs</span></code> attribute</li>
-<li><strong>freq</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; the target frequency in Hz</li>
-<li><strong>timeaxis</strong> (<em>int, optional</em>) &#8211; the axis along which to subsample</li>
+<li><strong>dat</strong> (<em>Data</em>) &#8211;
+Data object with <code class="docutils literal"><span class="pre">.fs</span></code> attribute</li>
+<li><strong>freq</strong> (<em>float</em>) &#8211;
+the target frequency in Hz</li>
+<li><strong>timeaxis</strong> (<em>int, optional</em>) &#8211;
+the axis along which to subsample</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>dat</strong> (<em>Data</em>) &#8211;
 copy of <code class="docutils literal"><span class="pre">dat</span></code> with subsampled frequency</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></p>
 </td>
 </tr>
 </tbody>
@@ -2651,16 +2697,14 @@ appropriate <code class="docutils literal"><span class="pre">.data</span></code>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; </li>
-<li><strong>ax2</strong> (<em>ax1,</em>) &#8211; the indices of the axes to swap</li>
+<li><strong>dat</strong> (<em>Data</em>)</li>
+<li><strong>ax1, ax2</strong> (<em>int</em>) &#8211;
+the indices of the axes to swap</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>dat</strong> (<em>Data</em>) &#8211;
 a copy of <code class="docutils literal"><span class="pre">dat</span></code> with the appropriate axes swapped.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></p>
 </td>
 </tr>
 </tbody>
@@ -2688,13 +2732,11 @@ a copy of <code class="docutils literal"><span class="pre">dat</span></code> wit
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; </td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dat</strong> (<em>Data</em>)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> (<em>Data</em>) &#8211;
 copy of <code class="docutils literal"><span class="pre">dat</span></code> with with the variance along the <code class="docutils literal"><span class="pre">timeaxis</span></code>
 removed and <code class="docutils literal"><span class="pre">timeaxis</span></code> removed.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></td>
 </tr>
 </tbody>
 </table>
@@ -2726,7 +2768,8 @@ in samples.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>samples</strong> (<em>int, optional</em>) &#8211; the desired block length in samples</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>samples</strong> (<em>int, optional</em>) &#8211;
+the desired block length in samples</td>
 </tr>
 </tbody>
 </table>
@@ -2752,7 +2795,8 @@ in samples.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; continuous Data object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dat</strong> (<em>Data</em>) &#8211;
+continuous Data object</td>
 </tr>
 </tbody>
 </table>
@@ -2770,10 +2814,8 @@ new data to it.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> &#8211;
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> (<em>Data</em>) &#8211;
 continuous Data object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></td>
 </tr>
 </tbody>
 </table>
@@ -2822,10 +2864,10 @@ attributes. It is mainly used in unittests.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data</strong> (<em>ndarray</em>) &#8211; </li>
-<li><strong>axes</strong> (<em>nlist of 1darrays</em>) &#8211; </li>
-<li><strong>names</strong> (<em>nlist of strings</em>) &#8211; </li>
-<li><strong>units</strong> (<em>nlist of strings</em>) &#8211; </li>
+<li><strong>data</strong> (<em>ndarray</em>)</li>
+<li><strong>axes</strong> (<em>nlist of 1darrays</em>)</li>
+<li><strong>names</strong> (<em>nlist of strings</em>)</li>
+<li><strong>units</strong> (<em>nlist of strings</em>)</li>
 </ul>
 </td>
 </tr>
@@ -2878,10 +2920,8 @@ True.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>truth</strong> &#8211;
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>truth</strong> (<em>Bool</em>) &#8211;
 <code class="docutils literal"><span class="pre">False</span></code> if <a class="reference internal" href="#wyrm.types.Data.__nonzero__" title="wyrm.types.Data.__nonzero__"><code class="xref py py-func docutils literal"><span class="pre">__nonzero__()</span></code></a> was <code class="docutils literal"><span class="pre">0</span></code>, else <code class="docutils literal"><span class="pre">True</span></code>.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Bool</td>
 </tr>
 </tbody>
 </table>
@@ -2902,12 +2942,10 @@ in unittests.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; </td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<em>Data</em>)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>equal</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>equal</strong> (<em>Boolean</em>) &#8211;
 True if <code class="docutils literal"><span class="pre">self</span></code> and <code class="docutils literal"><span class="pre">other</span></code> are equal, False if not.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -2928,13 +2966,11 @@ same restrictions of <a class="reference internal" href="#wyrm.types.Data.__eq__
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; </td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<em>Data</em>)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>equal</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>equal</strong> (<em>Boolean</em>) &#8211;
 True if <code class="docutils literal"><span class="pre">self</span></code> and <code class="docutils literal"><span class="pre">other</span></code> are not equal, False
 otherwise.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -2963,10 +2999,8 @@ attributes like <code class="docutils literal"><span class="pre">.markers</span>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>nonzero</strong> &#8211;
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>nonzero</strong> (<em>int</em>) &#8211;
 <code class="docutils literal"><span class="pre">self.data.size</span></code></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="http://docs.python.org/library/functions.html#int" title="(in Python v2.7)">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -2980,10 +3014,8 @@ attributes like <code class="docutils literal"><span class="pre">.markers</span>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>str</strong> &#8211;
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>str</strong> (<em>str</em>) &#8211;
 a human readable representation of the data object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)">str</a></td>
 </tr>
 </tbody>
 </table>
@@ -3000,14 +3032,13 @@ resulting object.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>kwargs</strong> (<em>dict, optional</em>) &#8211; if provided <code class="docutils literal"><span class="pre">copy</span></code> will try to overwrite the name, value
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>kwargs</strong> (<em>dict, optional</em>) &#8211;
+if provided <code class="docutils literal"><span class="pre">copy</span></code> will try to overwrite the name, value
 pairs after the shallow- and before the deep copy. If no
 <code class="docutils literal"><span class="pre">kwargs</span></code> are provided, it will just return the deep copy.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> &#8211;
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>dat</strong> (<em>Data</em>) &#8211;
 a deep copy of <code class="docutils literal"><span class="pre">self</span></code>.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></td>
 </tr>
 </tbody>
 </table>
@@ -3048,7 +3079,8 @@ be a fraction of a millisecond.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>length_ms</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; the length of the ring buffer in milliseconds</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>length_ms</strong> (<em>int</em>) &#8211;
+the length of the ring buffer in milliseconds</td>
 </tr>
 </tbody>
 </table>
@@ -3112,7 +3144,8 @@ this attribute directly but via the <a class="reference internal" href="#wyrm.ty
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dat</strong> (<a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data"><em>Data</em></a>) &#8211; a continuous data object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dat</strong> (<em>Data</em>) &#8211;
+a continuous data object</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211;
 if the [1:]-dimensions (all but the first one) of <code class="docutils literal"><span class="pre">data</span></code>
@@ -3131,10 +3164,8 @@ does not match the ring buffer dimensions</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>data</strong> &#8211;
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>data</strong> (<em>Data</em>) &#8211;
 the full contents of the ring buffer</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#wyrm.types.Data" title="wyrm.types.Data">Data</a></td>
 </tr>
 </tbody>
 </table>
