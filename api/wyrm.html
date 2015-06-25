@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>wyrm package &mdash; Wyrm 1.0 documentation</title>
+    <title>wyrm package &mdash; Wyrm 1.0.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.0',
+        VERSION:     '1.0.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
-    <link rel="top" title="Wyrm 1.0 documentation" href="../index.html" /> 
+    <link rel="top" title="Wyrm 1.0.0 documentation" href="../index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -36,7 +36,7 @@
         <li class="right" >
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Wyrm 1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Wyrm 1.0.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -640,13 +640,22 @@ otherwise <code class="docutils literal"><span class="pre">None</span></code></t
 
 <dl class="function">
 <dt id="wyrm.plot.plot_channels">
-<code class="descclassname">wyrm.plot.</code><code class="descname">plot_channels</code><span class="sig-paren">(</span><em>dat</em>, <em>chanaxis=-1</em>, <em>otheraxis=-2</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/wyrm/plot.html#plot_channels"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#wyrm.plot.plot_channels" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plot all channels for a continuous.</p>
+<code class="descclassname">wyrm.plot.</code><code class="descname">plot_channels</code><span class="sig-paren">(</span><em>dat</em>, <em>ncols=8</em>, <em>chanaxis=-1</em>, <em>otheraxis=-2</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/wyrm/plot.html#plot_channels"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#wyrm.plot.plot_channels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot all channels for a continuous or epo.</p>
+<p>In case of an epoched Data object, the classwise average is
+calculated, and for each channel the respective classes are plotted.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dat</strong> (<em>Data</em>)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dat</strong> (<em>Data</em>) &#8211;
+continous or epoched Data object</li>
+<li><strong>ncols</strong> (<em>int, optional</em>) &#8211;
+the number of colums in the grid. The number of rows is
+calculated depending on <code class="docutils literal"><span class="pre">ncols</span></code> and the number of channels</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -3226,7 +3235,7 @@ the full contents of the ring buffer</td>
         <li class="right" >
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Wyrm 1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Wyrm 1.0.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
