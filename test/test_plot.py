@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+from __future__ import division
 
 import unittest
 
@@ -7,7 +8,6 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 from matplotlib import pyplot as plt
-
 
 from wyrm.types import Data
 from wyrm import plot
@@ -19,7 +19,7 @@ class TestPlot(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         x = np.linspace(0, 1000, 1000, endpoint=False)
-        y = 5 * np.sin(2 * np.pi * x)
+        y = 5 * np.sin(np.pi * x / 300)
         data = np.tile(y[:, None], (1, len(CHANNEL_10_20)))
         data += np.random.normal(size=data.shape)
         axes = [x, [i[0] for i in CHANNEL_10_20]]
@@ -42,13 +42,16 @@ class TestPlot(unittest.TestCase):
     def tearDown(self):
         test_method = self._testMethodName
         plt.suptitle(test_method)
-        plt.savefig(test_method + '.png')
+        plt.savefig(test_method + '.jpg')
         plt.close()
 
 ###############################################################################
 
-    def test_plot_channels(self):
+    def test_plot_channels_cnt(self):
         plot.plot_channels(self.cnt)
+
+    def test_plot_channels_epo(self):
+        plot.plot_channels(self.epo)
 
     def test_plot_spatio_temporal_r2_values(self):
         plot.plot_spatio_temporal_r2_values(self.epo)

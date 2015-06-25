@@ -53,28 +53,43 @@ from wyrm.types import Data
 # ############# OLD FUNCTIONS ############################################
 
 
-def plot_channels(dat, chanaxis=-1, otheraxis=-2):
-    """Plot all channels for a continuous.
+def plot_channels(dat, ncols=8, chanaxis=-1, otheraxis=-2):
+    """Plot all channels for a continuous or epo.
+
+    In case of an epoched Data object, the classwise average is
+    calculated, and for each channel the respective classes are plotted.
 
     Parameters
     ----------
     dat : Data
+        continous or epoched Data object
+    ncols : int, optional
+        the number of colums in the grid. The number of rows is
+        calculated depending on ``ncols`` and the number of channels
 
     """
+    # test if epo
+    is_epo = False
+    if dat.data.ndim == 3:
+        is_epo = True
+        dat = proc.calculate_classwise_average(dat)
     ax = []
     n_channels = dat.data.shape[chanaxis]
+    nrows = int(np.ceil(n_channels / ncols))
+    f, ax = plt.subplots(nrows=nrows, ncols=ncols, sharex=True, sharey=True);
     for i, chan in enumerate(dat.axes[chanaxis]):
-        if i == 0:
-            a = plt.subplot(10, n_channels / 10 + 1, i + 1)
-        else:
-            a = plt.subplot(10, n_channels / 10 + 1, i + 1, sharex=ax[0], sharey=ax[0])
-        ax.append(a)
-        #x, y = dat.axes[otheraxis], dat.data.take([i], chanaxis)
+        a = ax[i // ncols, i % ncols]
         dat.axes[otheraxis], dat.data.take([i], chanaxis)
-        a.plot(dat.axes[otheraxis], dat.data.take([i], chanaxis).squeeze())
+        if is_epo:
+            for j, name in enumerate(dat.class_names):
+                cnt = proc.select_classes(dat, [j])
+                a.plot(cnt.axes[otheraxis], cnt.data.take([i], chanaxis).squeeze(), label=name)
+        else:
+            a.plot(dat.axes[otheraxis], dat.data.take([i], chanaxis).squeeze())
         a.set_title(chan)
-        plt.axvline(x=0)
-        plt.axhline(y=0)
+        a.axvline(x=0, color='black')
+        a.axhline(y=0, color='black')
+    plt.legend()
 
 
 def plot_spatio_temporal_r2_values(dat):

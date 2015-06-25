@@ -1,14 +1,25 @@
 Changelog
 =========
 
-Version 1.0
------------
+Version 1.0.0
+-------------
+
+We bumped the version up to 1 without backwards-incompatible changes since the
+last version.
 
 New Methods
 ~~~~~~~~~~~
 
 * New method :meth:`wyrm.processing.rereference` for rereferencing channels
 * New method :meth:`wyrm.processing.calculate_whitening_matrix`
+
+Improvements
+~~~~~~~~~~~~
+
+* :meth:`wyrm.plot.plot_channels` is now able to plot continuous and epoched
+  data
+* :meth:`wyrm.plot.plot_channels` allows for configuring the number of columns
+  of the grid
 
 Misc
 ~~~~
