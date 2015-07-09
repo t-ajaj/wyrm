@@ -29,6 +29,7 @@ Wyrm's methods are grouped into several modules:
    plot
    types
    io
+   misc
 
 Indices and tables
 ==================

@@ -1,6 +1,15 @@
 Changelog
 =========
 
+Version 1.1.0
+-------------
+
+New Methods
+~~~~~~~~~~~
+
+* New decorator :class:`wyrm.misc.deprecated` that is used internally for
+  marking methods as deprecated
+
 Version 1.0.0
 -------------
 
