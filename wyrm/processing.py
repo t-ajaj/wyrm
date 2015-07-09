@@ -19,6 +19,9 @@ import scipy as sp
 from scipy import signal
 from sklearn.covariance import LedoitWolf as LW
 
+from wyrm.misc import deprecated
+
+
 logging.basicConfig(level=logging.NOTSET)
 logger = logging.getLogger(__name__)
 
@@ -1633,7 +1636,7 @@ def calculate_csp(epo, classes=None):
     >>> w, a, d = calculate_csp(epo)
     >>> # Apply the first two and the last two columns of the sorted
     >>> # filter to the data
-    >>> filtered = apply_csp(epo, w, [0, 1, -2, -1])
+    >>> filtered = apply_spatial_filter(epo, w[:, [0, 1, -2, -1]])
     >>> # You'll probably want to get the log-variance along the time
     >>> # axis, this should result in four numbers (one for each
     >>> # channel)
@@ -1676,7 +1679,7 @@ def calculate_csp(epo, classes=None):
 
     See Also
     --------
-    :func:`apply_csp`, :func:`calculate_spoc`
+    :func:`apply_spatial_filter`, :func:`apply_csp`, :func:`calculate_spoc`
 
     References
     ----------
@@ -1720,6 +1723,7 @@ def calculate_csp(epo, classes=None):
     return v, a, d
 
 
+@deprecated("1.1", "apply_spatial_filter")
 def apply_csp(epo, filt, columns=[0, -1]):
     """Apply the CSP filter.
 
@@ -1751,16 +1755,12 @@ def apply_csp(epo, filt, columns=[0, -1]):
 
     See Also
     --------
-    :func:`calculate_csp`
+    :func:`calculate_csp`, :func:`apply_spatial_filter`
 
     """
     f = filt[:, columns]
-    data = np.array([np.dot(epo.data[i], f) for i in range(epo.data.shape[0])])
-    axes = epo.axes[:]
-    axes[-1] = np.array(['csp %i' % i for i in range(data.shape[-1])])
-    names = epo.names[:]
-    names[-1] = 'CSP Channel'
-    dat = epo.copy(data=data, axes=axes, names=names)
+    dat = apply_spatial_filter(epo, f, prefix='csp ')
+    dat.names[-1] = 'CSP Channel'
     return dat
 
 
