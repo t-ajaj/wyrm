@@ -1988,8 +1988,12 @@ def calculate_cca(dat_x, dat_y, timeaxis=-2):
 
     >>> rho, w_x, w_y = calculate_cca(dat_x, dat_y)
     >>> # Calculate canonical variables via obtained weights
-    >>> cv_x = np.dot(dat_x, w_x)
-    >>> cv_y = np.dot(dat_y, w_y)
+    >>> cv_x = apply_spatial_filter(dat_x, w_x, prefix="CCA ")
+    >>> cv_y = apply_spatial_filter(dat_y, w_y, prefix="CCA ")
+
+    See Also
+    --------
+    :func:`apply_spatial_filter`
 
     References
     ----------

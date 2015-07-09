@@ -7,7 +7,7 @@ from numpy.random import randn
 np.random.seed(42)
 
 from wyrm.types import Data
-from wyrm.processing import append, swapaxes, calculate_cca
+from wyrm.processing import append, swapaxes, calculate_cca, apply_spatial_filter
 
 
 class TestCalculateCCA(unittest.TestCase):
@@ -21,18 +21,18 @@ class TestCalculateCCA(unittest.TestCase):
         # X is a random mixture matrix of random variables
         Sx = randn(self.SAMPLES, self.CHANNELS_X)
         Ax = randn(self.CHANNELS_X, self.CHANNELS_X)
-        self.X = np.dot(Sx, Ax)
+        X = np.dot(Sx, Ax)
         # Y is a random mixture matrix of random variables except the
         # first component
         Sy = randn(self.SAMPLES, self.CHANNELS_Y)
         Sy[:, 0] = Sx[:, 0] + self.NOISE_LEVEL * randn(self.SAMPLES)
         Ay = randn(self.CHANNELS_Y, self.CHANNELS_Y)
-        self.Y = np.dot(Sy, Ay)
+        Y = np.dot(Sy, Ay)
         # generate Data object
-        axes_x = [np.arange(self.X.shape[0]), np.arange(self.X.shape[1])]
-        axes_y = [np.arange(self.Y.shape[0]), np.arange(self.Y.shape[1])]
-        self.dat_x = Data(self.X, axes=axes_x, names=['time', 'channel'], units=['ms', '#'])
-        self.dat_y = Data(self.Y, axes=axes_y, names=['time', 'channel'], units=['ms', '#'])
+        axes_x = [np.arange(X.shape[0]), np.arange(X.shape[1])]
+        axes_y = [np.arange(Y.shape[0]), np.arange(Y.shape[1])]
+        self.dat_x = Data(X, axes=axes_x, names=['time', 'channel'], units=['ms', '#'])
+        self.dat_y = Data(Y, axes=axes_y, names=['time', 'channel'], units=['ms', '#'])
 
     def test_rho(self):
         """Test if the canonical correlation coefficient almost equals 1."""
@@ -42,11 +42,11 @@ class TestCalculateCCA(unittest.TestCase):
     def test_diff_between_canonical_variables(self):
         """Test if the scaled canonical variables are almost same."""
         rho, w_x, w_y = calculate_cca(self.dat_x, self.dat_y)
-        cv_x = np.dot(self.X, w_x)
-        cv_y = np.dot(self.Y, w_y)
+        cv_x = apply_spatial_filter(self.dat_x, w_x)
+        cv_y = apply_spatial_filter(self.dat_y, w_y)
 
         def scale(x):
-            tmp = x - x.mean()
+            tmp = x.data - x.data.mean()
             return tmp / tmp[np.argmax(np.abs(tmp))]
 
         diff = scale(cv_x) - scale(cv_y)
