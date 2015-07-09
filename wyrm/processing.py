@@ -1062,7 +1062,7 @@ def calculate_whitening_matrix(dat):
     c = np.cov(dat.data.T)
     d, v = np.linalg.eig(c)
     tmp = np.dot(v, np.diag(1 / np.sqrt(d)))
-    a = np.dot(tmp, v)
+    a = np.dot(tmp, v.T)
     return a
 
 
