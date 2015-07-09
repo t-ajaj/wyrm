@@ -23,6 +23,13 @@ Deprecated Methods
 * Deprecated method :func:`wyrm.processing.apply_csp`. One should use
   :func:`wyrm.processing.apply_spatial_filter` instead
 
+Bugfixes
+~~~~~~~~
+
+* Fixed bug in :func:`wyrm.processing.calculate_whitening_matrix`, that
+  incorrectly calculated the whitening matrix due to a missing transpose
+
+
 Version 1.0.0
 -------------
 
