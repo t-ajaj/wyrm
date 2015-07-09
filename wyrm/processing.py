@@ -1066,6 +1066,78 @@ def calculate_whitening_matrix(dat):
     return a
 
 
+def apply_spatial_filter(dat, w, prefix=None, postfix=None, chanaxis=-1):
+    """Apply spatial filter to ``Data`` object.
+
+    This method applies the spatial filter ``w`` to a continuous or
+    epoched ``Data`` object.
+
+    Depending on the filter ``w``, since the original channel names may
+    become meaningless. For that you can either set a ``prefix`` (e.g.
+    ``CSP``) and the resulting channels will be renamed to prefix +
+    channel number (e.g. ``CSP0``, ``CSP1``, etc.).
+
+    Alternatively you can set a suffix e.g. ``Laplace`` and the
+    resulting channels will be renamed to original channel name + suffix
+    (e.g. ``Cz Laplace``, etc.)
+
+    If neither pre- or postfix are set, the channel names will be kept.
+
+    Parameters
+    ----------
+    dat : Data
+        Data object
+    w : 2d array
+        Spatial filter matrix
+    prefix : str, optional
+        the channel prefix
+    postfix : str, optional
+        the channel postfix
+    chanaxis : int, optional
+        the index of the channel axis
+
+    Returns
+    -------
+    dat : Data
+        The resulting spatial-filtered data
+
+    Examples
+    --------
+
+    >>> w, _, _ = calculate_csp(epo)
+    >>> epo_filtered = apply_spatial_filter(epo, w, prefix='CSP ')
+    >>> epo_filtered.names[-1] = 'CSP Channel'
+
+    Raises
+    ------
+    ValueError : If prefix and postfix are not None
+    TypeError : If prefix or postfix are not None and not str
+
+    See Also
+    --------
+    :func:`calculate_csp`, :func:`calculate_cca`, :func:`apply_spatial_filter`
+
+    """
+    if prefix is not None and postfix is not None:
+        raise ValueError('Please chose either pre- or postfix, not both.')
+    dat = dat.copy()
+    dat = swapaxes(dat, -1, chanaxis)
+    shape_orig = dat.data.shape
+    # the target shape will change in the channel-dimension we set that
+    # to -1 as in 'automagic'
+    shape_target = list(shape_orig)
+    shape_target[chanaxis] = -1
+    data = dat.data.reshape(-1, dat.data.shape[-1])
+    data = np.dot(data, w)
+    dat.data = data.reshape(shape_target)
+    dat = swapaxes(dat, -1, chanaxis)
+    if prefix is not None:
+        dat.axes[chanaxis] = [prefix+str(i) for i, _ in enumerate(dat.axes[chanaxis])]
+    if postfix is not None:
+        dat.axes[chanaxis] = [chan+postfix for chan in dat.axes[chanaxis]]
+    return dat
+
+
 def clear_markers(dat, timeaxis=-2):
     """Remove markers that are outside of the ``dat`` time interval.
 
