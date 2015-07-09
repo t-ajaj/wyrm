@@ -4,11 +4,24 @@ Changelog
 Version 1.1.0
 -------------
 
+This version mainly adds the new :func:`wyrm.apply_spatial_filter` method, for
+applying spatial filtering used in CSP, CCA, whitening, etc. All manual spatial
+filtering has been replaced throughout the toolbox to use the new method
+instead.
+
 New Methods
 ~~~~~~~~~~~
 
 * New decorator :class:`wyrm.misc.deprecated` that is used internally for
   marking methods as deprecated
+* New method :func:`wyrm.processing.apply_spatial_filter` for applying spatial
+  filters like CSP, CCA, whitening, etc.
+
+Deprecated Methods
+~~~~~~~~~~~~~~~~~~
+
+* Deprecated method :func:`wyrm.processing.apply_csp`. One should use
+  :func:`wyrm.processing.apply_spatial_filter` instead
 
 Version 1.0.0
 -------------
