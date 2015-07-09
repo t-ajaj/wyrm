@@ -1056,12 +1056,15 @@ def calculate_whitening_matrix(dat):
     Examples
     --------
 
-    >>> a = calculate_whitening_matrix(cnt_train)
-    >>> cnt_test = np.dot(cnt_test.data, a)
+    >>> a = calculate_whitening_matrix(cnt)
+    >>> cnt_whitened = apply_spatial_filter(cnt, a)
+    >>> # rename channels accordingly
+
+    See Also
+    --------
+    :func:`apply_spatial_filter`
 
     """
-    # TODO: iprove docstring and example, maybe it's time to implement
-    # an `apply_spatial_filter` method
     c = np.cov(dat.data.T)
     d, v = np.linalg.eig(c)
     tmp = np.dot(v, np.diag(1 / np.sqrt(d)))

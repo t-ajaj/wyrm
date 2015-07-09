@@ -4,7 +4,7 @@ import unittest
 
 import numpy as np
 
-from wyrm.processing import calculate_whitening_matrix
+from wyrm.processing import calculate_whitening_matrix, apply_spatial_filter
 from wyrm.types import Data
 
 
@@ -30,15 +30,15 @@ class TestCalculateWhitentingMatrix(unittest.TestCase):
     def test_diagonal(self):
         """The whitened data should have all 1s on the covariance matrix."""
         a = calculate_whitening_matrix(self.cnt)
-        dat2 = np.dot(self.cnt.data, a)
-        vals = np.diag(np.cov(dat2.T))
+        dat2 = apply_spatial_filter(self.cnt, a)
+        vals = np.diag(np.cov(dat2.data.T))
         np.testing.assert_array_almost_equal(vals, [1. for i in range(len(vals))])
 
     def test_zeros(self):
-        """The whinened data should have all 0s on the non-diagonals of the covariance matrix."""
+        """The whitened data should have all 0s on the non-diagonals of the covariance matrix."""
         a = calculate_whitening_matrix(self.cnt)
-        dat2 = np.dot(self.cnt.data, a)
-        cov = np.cov(dat2.T)
+        dat2 = apply_spatial_filter(self.cnt, a)
+        cov = np.cov(dat2.data.T)
         # substract the diagonals
         cov -= np.diag(np.diag(cov))
         self.assertAlmostEqual(np.sum(cov), 0)
