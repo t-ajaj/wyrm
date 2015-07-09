@@ -12,6 +12,14 @@ wyrm.io module
     :undoc-members:
     :show-inheritance:
 
+wyrm.misc module
+----------------
+
+.. automodule:: wyrm.misc
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 wyrm.plot module
 ----------------
 

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Changelog &mdash; Wyrm 1.0.0 documentation</title>
+    <title>Changelog &mdash; Wyrm 1.1.0 documentation</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.0.0',
+        VERSION:     '1.1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/sidebar.js"></script>
-    <link rel="top" title="Wyrm 1.0.0 documentation" href="index.html" />
+    <link rel="top" title="Wyrm 1.1.0 documentation" href="index.html" />
     <link rel="next" title="wyrm.processing" href="api/wyrm.processing.html" />
     <link rel="prev" title="Writing Toolbox Methods" href="writing_toolbox_methods.html" /> 
   </head>
@@ -44,7 +44,7 @@
         <li class="right" >
           <a href="writing_toolbox_methods.html" title="Writing Toolbox Methods"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Wyrm 1.0.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Wyrm 1.1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -55,12 +55,42 @@
             
   <div class="section" id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="version-1-1-0">
+<h2>Version 1.1.0<a class="headerlink" href="#version-1-1-0" title="Permalink to this headline">¶</a></h2>
+<p>This version mainly adds the new <code class="xref py py-func docutils literal"><span class="pre">wyrm.apply_spatial_filter()</span></code> method, for
+applying spatial filtering used in CSP, CCA, whitening, etc. All manual spatial
+filtering has been replaced throughout the toolbox to use the new method
+instead.</p>
+<div class="section" id="new-methods">
+<h3>New Methods<a class="headerlink" href="#new-methods" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>New decorator <a class="reference internal" href="api/wyrm.html#wyrm.misc.deprecated" title="wyrm.misc.deprecated"><code class="xref py py-class docutils literal"><span class="pre">wyrm.misc.deprecated</span></code></a> that is used internally for
+marking methods as deprecated</li>
+<li>New method <a class="reference internal" href="api/wyrm.html#wyrm.processing.apply_spatial_filter" title="wyrm.processing.apply_spatial_filter"><code class="xref py py-func docutils literal"><span class="pre">wyrm.processing.apply_spatial_filter()</span></code></a> for applying spatial
+filters like CSP, CCA, whitening, etc.</li>
+</ul>
+</div>
+<div class="section" id="deprecated-methods">
+<h3>Deprecated Methods<a class="headerlink" href="#deprecated-methods" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Deprecated method <a class="reference internal" href="api/wyrm.html#wyrm.processing.apply_csp" title="wyrm.processing.apply_csp"><code class="xref py py-func docutils literal"><span class="pre">wyrm.processing.apply_csp()</span></code></a>. One should use
+<a class="reference internal" href="api/wyrm.html#wyrm.processing.apply_spatial_filter" title="wyrm.processing.apply_spatial_filter"><code class="xref py py-func docutils literal"><span class="pre">wyrm.processing.apply_spatial_filter()</span></code></a> instead</li>
+</ul>
+</div>
+<div class="section" id="bugfixes">
+<h3>Bugfixes<a class="headerlink" href="#bugfixes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Fixed bug in <a class="reference internal" href="api/wyrm.html#wyrm.processing.calculate_whitening_matrix" title="wyrm.processing.calculate_whitening_matrix"><code class="xref py py-func docutils literal"><span class="pre">wyrm.processing.calculate_whitening_matrix()</span></code></a>, that
+incorrectly calculated the whitening matrix due to a missing transpose</li>
+</ul>
+</div>
+</div>
 <div class="section" id="version-1-0-0">
 <h2>Version 1.0.0<a class="headerlink" href="#version-1-0-0" title="Permalink to this headline">¶</a></h2>
 <p>We bumped the version up to 1 without backwards-incompatible changes since the
 last version.</p>
-<div class="section" id="new-methods">
-<h3>New Methods<a class="headerlink" href="#new-methods" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h3>New Methods<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>New method <a class="reference internal" href="api/wyrm.html#wyrm.processing.rereference" title="wyrm.processing.rereference"><code class="xref py py-meth docutils literal"><span class="pre">wyrm.processing.rereference()</span></code></a> for rereferencing channels</li>
 <li>New method <a class="reference internal" href="api/wyrm.html#wyrm.processing.calculate_whitening_matrix" title="wyrm.processing.calculate_whitening_matrix"><code class="xref py py-meth docutils literal"><span class="pre">wyrm.processing.calculate_whitening_matrix()</span></code></a></li>
@@ -95,8 +125,14 @@ of the grid</li>
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
-<li><a class="reference internal" href="#version-1-0-0">Version 1.0.0</a><ul>
+<li><a class="reference internal" href="#version-1-1-0">Version 1.1.0</a><ul>
 <li><a class="reference internal" href="#new-methods">New Methods</a></li>
+<li><a class="reference internal" href="#deprecated-methods">Deprecated Methods</a></li>
+<li><a class="reference internal" href="#bugfixes">Bugfixes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-1-0-0">Version 1.0.0</a><ul>
+<li><a class="reference internal" href="#id1">New Methods</a></li>
 <li><a class="reference internal" href="#improvements">Improvements</a></li>
 <li><a class="reference internal" href="#misc">Misc</a></li>
 </ul>
@@ -143,7 +179,7 @@ of the grid</li>
         <li class="right" >
           <a href="writing_toolbox_methods.html" title="Writing Toolbox Methods"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Wyrm 1.0.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Wyrm 1.1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
