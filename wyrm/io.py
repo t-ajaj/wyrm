@@ -166,7 +166,7 @@ def load_brain_vision_data(vhdr):
     logger.debug('Loading EEG Data.')
     data = np.fromfile(data_f, np.int16)
     data = data.reshape(-1, n_channels).astype(type(resolutions[0]))
-    data *= resolutions[0]
+    data = np.multiply(data, resolutions[0])
     n_samples = data.shape[0]
     # duration in ms
     duration = 1000 * n_samples / fs
